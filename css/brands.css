@@ -20,6 +20,14 @@
   gap: 18px;
 }
 
+.brands__active-img {
+  width: 75px;
+  height: 75px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 12px rgba(var(--color-accent-rgb), 0.25));
+  transition: all 0.4s ease;
+}
+
 .brands__active-svg {
   color: var(--color-gold-light);
   filter: drop-shadow(0 0 10px rgba(var(--color-accent-rgb), 0.2));
@@ -60,9 +68,11 @@
   padding: 8px;
 }
 
-.brands__brand-btn svg {
+.brands__brand-btn svg,
+.brands__brand-btn img {
   width: 100%;
   height: 100%;
+  object-fit: contain;
 }
 
 .brands__brand-btn:hover {
