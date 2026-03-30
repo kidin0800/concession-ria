@@ -74,6 +74,8 @@ export function initBrand() {
             if (logo.type === 'img') {
                 const img = document.createElement('img');
                 img.className = 'brands__active-img';
+                if (brand === 'Audi')
+                    img.classList.add('brands__logo--large');
                 img.src = logo.src;
                 img.alt = brand;
                 brandSvgContainer.insertBefore(img, brandLogoText);
