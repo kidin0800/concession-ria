@@ -24,6 +24,8 @@ let currentVehicle: VehicleData | null = null;
 let currentBuyer: BuyerData | null = null;
 
 export function initVehicle(): void {
+  initCarousel();
+
   const modal = document.getElementById('vehicleModal') as HTMLElement;
   const overlay = modal.querySelector('.modal__overlay') as HTMLElement;
   const closeBtn = document.getElementById('modalClose') as HTMLElement;
@@ -79,6 +81,24 @@ export function initVehicle(): void {
 
   // Confirm purchase
   document.getElementById('btnConfirm')!.addEventListener('click', confirmPurchase);
+}
+
+function initCarousel(): void {
+  const grid = document.querySelector('.vehicles__grid') as HTMLElement;
+  const leftBtn = document.getElementById('vehiclesLeft') as HTMLButtonElement;
+  const rightBtn = document.getElementById('vehiclesRight') as HTMLButtonElement;
+
+  if (!grid || !leftBtn || !rightBtn) return;
+
+  const scrollAmount = 320; // card width + gap
+
+  rightBtn.addEventListener('click', () => {
+    grid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  });
+
+  leftBtn.addEventListener('click', () => {
+    grid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  });
 }
 
 function formatPrice(value: number): string {

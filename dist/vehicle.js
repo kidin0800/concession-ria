@@ -1,6 +1,7 @@
 let currentVehicle = null;
 let currentBuyer = null;
 export function initVehicle() {
+    initCarousel();
     const modal = document.getElementById('vehicleModal');
     const overlay = modal.querySelector('.modal__overlay');
     const closeBtn = document.getElementById('modalClose');
@@ -52,6 +53,20 @@ export function initVehicle() {
     });
     // Confirm purchase
     document.getElementById('btnConfirm').addEventListener('click', confirmPurchase);
+}
+function initCarousel() {
+    const grid = document.querySelector('.vehicles__grid');
+    const leftBtn = document.getElementById('vehiclesLeft');
+    const rightBtn = document.getElementById('vehiclesRight');
+    if (!grid || !leftBtn || !rightBtn)
+        return;
+    const scrollAmount = 320; // card width + gap
+    rightBtn.addEventListener('click', () => {
+        grid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+    leftBtn.addEventListener('click', () => {
+        grid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
 }
 function formatPrice(value) {
     return 'R$ ' + value.toLocaleString('pt-BR');

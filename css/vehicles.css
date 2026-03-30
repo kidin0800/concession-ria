@@ -4,19 +4,22 @@
   background: var(--color-black);
 }
 
+/* Carousel wrapper */
+.vehicles__carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .vehicles__grid {
   display: flex;
   gap: 20px;
-  overflow-x: auto;
+  overflow-x: hidden;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  padding-bottom: 15px;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.vehicles__grid::-webkit-scrollbar {
-  display: none;
+  padding: 10px 0;
+  flex: 1;
 }
 
 .vehicles__grid .vehicles__card {
@@ -24,6 +27,29 @@
   max-width: 300px;
   flex-shrink: 0;
   scroll-snap-align: start;
+}
+
+/* Arrows */
+.vehicles__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  background: rgba(26, 26, 26, 0.9);
+  color: var(--color-gold);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: var(--transition);
+  z-index: 2;
+}
+
+.vehicles__arrow:hover {
+  background: var(--color-gold);
+  color: var(--color-black);
+  border-color: var(--color-gold);
 }
 
 .vehicles__card {

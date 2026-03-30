@@ -70,7 +70,11 @@
         <p class="section-subtitle">Explore nosso catálogo completo de automóveis de luxo</p>
       </div>
 
-      <div class="vehicles__grid fade-in">
+      <div class="vehicles__carousel fade-in">
+        <button class="vehicles__arrow vehicles__arrow--left" id="vehiclesLeft" aria-label="Anterior">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+      <div class="vehicles__grid">
 
         <div class="vehicles__card" data-vehicle="mercedes-s-class" data-brand="Mercedes-Benz" data-model="S-Class 500" data-year="2024" data-price="1250000" data-km="0" data-fuel="Gasolina" data-transmission="Automático" data-power="449 cv" data-color="Preto Obsidiana">
           <div class="vehicles__card-image">
@@ -162,6 +166,10 @@
           </div>
         </div>
 
+      </div>
+        <button class="vehicles__arrow vehicles__arrow--right" id="vehiclesRight" aria-label="Próximo">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
       </div>
     </div>
   </section>
