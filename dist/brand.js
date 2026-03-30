@@ -1,20 +1,27 @@
 // Vehicle database - same data as the carousel cards
+const brandImages = {
+    'Mercedes-Benz': 'assets/images/mercedes-sclass.png',
+    'BMW': 'assets/images/bmw-serie7.png',
+    'Porsche': 'assets/images/porsche-911.png',
+    'Audi': 'assets/images/audi-a8.png',
+    'CAOA Chery': 'assets/images/caoa-tiggo8.webp',
+    'Ferrari': 'assets/images/ferrari-roma.png',
+};
 const vehicles = [
-    { brand: 'Mercedes-Benz', model: 'S-Class 500', year: '2024', price: 1250000, km: '0', fuel: 'Gasolina', transmission: 'Automático', power: '449 cv', color: 'Preto Obsidiana' },
-    { brand: 'BMW', model: 'Série 7 740i', year: '2024', price: 980000, km: '0', fuel: 'Gasolina', transmission: 'Automático', power: '380 cv', color: 'Branco Mineral' },
-    { brand: 'Porsche', model: '911 Turbo S', year: '2024', price: 1890000, km: '0', fuel: 'Gasolina', transmission: 'PDK', power: '650 cv', color: 'Cinza Quartzo' },
-    { brand: 'Audi', model: 'A8 L 60 TFSI', year: '2024', price: 890000, km: '0', fuel: 'Gasolina', transmission: 'Automático', power: '460 cv', color: 'Azul Navarra' },
-    { brand: 'CAOA Chery', model: 'Tiggo 8 Pro', year: '2024', price: 230000, km: '0', fuel: 'Gasolina', transmission: 'Automático', power: '186 cv', color: 'Preto Onyx' },
-    { brand: 'Ferrari', model: 'Roma', year: '2023', price: 3200000, km: '1200', fuel: 'Gasolina', transmission: 'DCT', power: '620 cv', color: 'Rosso Corsa' },
-    // Extra vehicles per brand
-    { brand: 'Mercedes-Benz', model: 'AMG GT 63 S', year: '2024', price: 1680000, km: '0', fuel: 'Gasolina', transmission: 'Automático', power: '639 cv', color: 'Cinza Selenita' },
-    { brand: 'Mercedes-Benz', model: 'GLE 53 AMG Coupé', year: '2024', price: 920000, km: '0', fuel: 'Gasolina', transmission: 'Automático', power: '435 cv', color: 'Branco Polar' },
-    { brand: 'BMW', model: 'M4 Competition', year: '2024', price: 850000, km: '0', fuel: 'Gasolina', transmission: 'Automático', power: '510 cv', color: 'Verde Isle of Man' },
-    { brand: 'BMW', model: 'X7 M60i', year: '2024', price: 1100000, km: '0', fuel: 'Gasolina', transmission: 'Automático', power: '530 cv', color: 'Preto Safira' },
-    { brand: 'Porsche', model: 'Cayenne Turbo GT', year: '2024', price: 1450000, km: '0', fuel: 'Gasolina', transmission: 'Tiptronic', power: '640 cv', color: 'Branco Carrara' },
-    { brand: 'Audi', model: 'RS e-tron GT', year: '2024', price: 1200000, km: '0', fuel: 'Elétrico', transmission: 'Automático', power: '646 cv', color: 'Cinza Daytona' },
-    { brand: 'Ferrari', model: '296 GTB', year: '2024', price: 4500000, km: '500', fuel: 'Híbrido', transmission: 'DCT', power: '830 cv', color: 'Giallo Modena' },
-    { brand: 'CAOA Chery', model: 'Tiggo 7 Pro', year: '2024', price: 185000, km: '0', fuel: 'Gasolina', transmission: 'CVT', power: '150 cv', color: 'Branco Perolizado' },
+    { brand: 'Mercedes-Benz', model: 'S-Class 500', year: '2024', price: 1250000, km: '0', fuel: 'Gasolina', transmission: 'Automático', power: '449 cv', color: 'Preto Obsidiana', image: 'assets/images/mercedes-sclass.png' },
+    { brand: 'BMW', model: 'Série 7 740i', year: '2024', price: 980000, km: '0', fuel: 'Gasolina', transmission: 'Automático', power: '380 cv', color: 'Branco Mineral', image: 'assets/images/bmw-serie7.png' },
+    { brand: 'Porsche', model: '911 Turbo S', year: '2024', price: 1890000, km: '0', fuel: 'Gasolina', transmission: 'PDK', power: '650 cv', color: 'Cinza Quartzo', image: 'assets/images/porsche-911.png' },
+    { brand: 'Audi', model: 'A8 L 60 TFSI', year: '2024', price: 890000, km: '0', fuel: 'Gasolina', transmission: 'Automático', power: '460 cv', color: 'Azul Navarra', image: 'assets/images/audi-a8.png' },
+    { brand: 'CAOA Chery', model: 'Tiggo 8 Pro', year: '2024', price: 230000, km: '0', fuel: 'Gasolina', transmission: 'Automático', power: '186 cv', color: 'Preto Onyx', image: 'assets/images/caoa-tiggo8.webp' },
+    { brand: 'Ferrari', model: 'Roma', year: '2023', price: 3200000, km: '1200', fuel: 'Gasolina', transmission: 'DCT', power: '620 cv', color: 'Rosso Corsa', image: 'assets/images/ferrari-roma.png' },
+    { brand: 'Mercedes-Benz', model: 'AMG GT 63 S', year: '2024', price: 1680000, km: '0', fuel: 'Gasolina', transmission: 'Automático', power: '639 cv', color: 'Cinza Selenita', image: 'assets/images/mercedes-sclass.png' },
+    { brand: 'Mercedes-Benz', model: 'GLE 53 AMG Coupé', year: '2024', price: 920000, km: '0', fuel: 'Gasolina', transmission: 'Automático', power: '435 cv', color: 'Branco Polar', image: 'assets/images/mercedes-sclass.png' },
+    { brand: 'BMW', model: 'M4 Competition', year: '2024', price: 850000, km: '0', fuel: 'Gasolina', transmission: 'Automático', power: '510 cv', color: 'Verde Isle of Man', image: 'assets/images/bmw-serie7.png' },
+    { brand: 'BMW', model: 'X7 M60i', year: '2024', price: 1100000, km: '0', fuel: 'Gasolina', transmission: 'Automático', power: '530 cv', color: 'Preto Safira', image: 'assets/images/bmw-serie7.png' },
+    { brand: 'Porsche', model: 'Cayenne Turbo GT', year: '2024', price: 1450000, km: '0', fuel: 'Gasolina', transmission: 'Tiptronic', power: '640 cv', color: 'Branco Carrara', image: 'assets/images/porsche-911.png' },
+    { brand: 'Audi', model: 'RS e-tron GT', year: '2024', price: 1200000, km: '0', fuel: 'Elétrico', transmission: 'Automático', power: '646 cv', color: 'Cinza Daytona', image: 'assets/images/audi-a8.png' },
+    { brand: 'Ferrari', model: '296 GTB', year: '2024', price: 4500000, km: '500', fuel: 'Híbrido', transmission: 'DCT', power: '830 cv', color: 'Giallo Modena', image: 'assets/images/ferrari-roma.png' },
+    { brand: 'CAOA Chery', model: 'Tiggo 7 Pro', year: '2024', price: 185000, km: '0', fuel: 'Gasolina', transmission: 'CVT', power: '150 cv', color: 'Branco Perolizado', image: 'assets/images/caoa-tiggo8.webp' },
 ];
 // Brand logos: image path or SVG fallback
 const brandLogos = {
@@ -42,7 +49,7 @@ export function initBrand() {
             return `
         <div class="brands__card">
           <div class="brands__card-image">
-            <span>${v.model}</span>
+            <img src="${v.image}" alt="${v.brand} ${v.model}">
           </div>
           <div class="brands__card-body">
             <h3 class="brands__card-name">${v.model}</h3>

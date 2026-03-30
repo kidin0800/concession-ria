@@ -171,6 +171,13 @@
   text-shadow: 0 2px 15px rgba(201, 168, 76, 0.15);
 }
 
+.vehicles__card-placeholder img {
+  width: 90%;
+  height: 80%;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+}
+
 .vehicles__card.active:hover .vehicles__card-placeholder {
   transform: scale(1.05);
 }
