@@ -1,7 +1,10 @@
 /* ===== Vehicles Section ===== */
 .vehicles {
-  padding: 40px 0;
+  padding: 60px 0;
   background: var(--color-black);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 /* Carousel wrapper */
@@ -97,7 +100,7 @@
 
 .vehicles__card-image {
   position: relative;
-  height: 180px;
+  height: 250px;
   overflow: hidden;
 }
 
@@ -110,7 +113,7 @@
   align-items: center;
   justify-content: center;
   font-family: var(--font-display);
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   color: var(--color-gold);
   letter-spacing: 3px;
   transition: var(--transition);
@@ -135,13 +138,13 @@
 }
 
 .vehicles__card-body {
-  padding: 18px 20px;
+  padding: 22px 25px;
 }
 
 .vehicles__card-title {
   font-family: var(--font-display);
-  font-size: 1.3rem;
-  margin-bottom: 8px;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
 }
 
 .vehicles__card-details {
@@ -159,15 +162,15 @@
 }
 
 .vehicles__card-price {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--color-gold);
-  margin-bottom: 12px;
+  margin-bottom: 15px;
 }
 
 .vehicles__card-btn {
   display: inline-block;
-  padding: 8px 22px;
+  padding: 10px 28px;
   border: 1px solid var(--color-gold);
   background: transparent;
   color: var(--color-gold);
