@@ -23,8 +23,8 @@
 }
 
 .brands__active-img {
-  height: 100px;
-  max-width: 220px;
+  height: 140px;
+  max-width: 300px;
   object-fit: contain;
   filter: drop-shadow(0 0 15px rgba(var(--color-accent-rgb), 0.25));
   transition: all 0.4s ease;
