@@ -5,9 +5,25 @@
 }
 
 .vehicles__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
   gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-bottom: 15px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.vehicles__grid::-webkit-scrollbar {
+  display: none;
+}
+
+.vehicles__grid .vehicles__card {
+  min-width: 300px;
+  max-width: 300px;
+  flex-shrink: 0;
+  scroll-snap-align: start;
 }
 
 .vehicles__card {
@@ -464,11 +480,6 @@
 }
 
 /* Responsive */
-@media (max-width: 992px) {
-  .vehicles__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 
 @media (max-width: 768px) {
   .modal__vehicle-header {
@@ -497,11 +508,8 @@
 }
 
 @media (max-width: 576px) {
-  .vehicles__grid {
-    grid-template-columns: 1fr;
-  }
-
-  .vehicles {
-    padding: 40px 0;
+  .vehicles__grid .vehicles__card {
+    min-width: 260px;
+    max-width: 260px;
   }
 }
