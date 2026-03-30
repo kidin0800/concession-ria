@@ -75,9 +75,8 @@
 .vehicles__grid {
   display: flex;
   gap: 24px;
-  padding: 30px 80px;
+  padding: 40px 80px 50px;
   overflow-x: auto;
-  overflow-y: visible;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -137,12 +136,11 @@
 /* Card hover */
 .vehicles__card:hover {
   opacity: 1;
-  transform: scale(1.05);
-  border-color: rgba(201, 168, 76, 0.3);
+  transform: translateY(-8px);
+  border-color: rgba(201, 168, 76, 0.35);
   box-shadow:
-    0 25px 70px rgba(0, 0, 0, 0.5),
-    0 10px 30px rgba(0, 0, 0, 0.4),
-    0 0 60px rgba(201, 168, 76, 0.1);
+    0 15px 40px rgba(0, 0, 0, 0.5),
+    0 0 25px rgba(201, 168, 76, 0.12);
 }
 
 .vehicles__card:hover::before {
