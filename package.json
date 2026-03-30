@@ -1,0 +1,12 @@
+{
+  "name": "grand-auto",
+  "version": "1.0.0",
+  "description": "Landing page - Grand Auto Concessionária de Carros de Luxo",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}

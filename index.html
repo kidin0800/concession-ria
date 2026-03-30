@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grand Auto | Concessionária de Carros de Luxo</title>
+  <meta name="description" content="Grand Auto - Excelência em veículos de luxo. Encontre o carro dos seus sonhos.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/vehicles.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/testimonials.css">
+  <link rel="stylesheet" href="css/form.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar__container">
+      <a href="#inicio" class="navbar__logo">
+        <span class="navbar__logo-text">Grand</span>
+        <span class="navbar__logo-accent">Auto</span>
+      </a>
+
+      <ul class="navbar__menu" id="navMenu">
+        <li><a href="#inicio" class="navbar__link">Início</a></li>
+        <li><a href="#veiculos" class="navbar__link">Veículos</a></li>
+        <li><a href="#sobre" class="navbar__link">Sobre</a></li>
+        <li><a href="#cadastro" class="navbar__link">Cadastro</a></li>
+        <li><a href="#contato" class="navbar__link">Contato</a></li>
+      </ul>
+
+      <div class="navbar__search">
+        <input type="text" class="navbar__search-input" placeholder="Buscar veículo..." aria-label="Buscar veículo">
+        <button class="navbar__search-btn" aria-label="Buscar">&#128269;</button>
+      </div>
+
+      <button class="navbar__hamburger" id="hamburger" aria-label="Abrir menu">
+        <span class="navbar__hamburger-line"></span>
+        <span class="navbar__hamburger-line"></span>
+        <span class="navbar__hamburger-line"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="inicio">
+    <div class="hero__overlay"></div>
+    <div class="hero__content fade-in">
+      <h1 class="hero__title">Grand <span class="hero__title-accent">Auto</span></h1>
+      <p class="hero__subtitle">Excelência em Veículos de Luxo</p>
+      <p class="hero__description">Descubra uma seleção exclusiva dos melhores automóveis do mundo. Elegância, performance e sofisticação em cada detalhe.</p>
+      <a href="#veiculos" class="hero__cta">Conheça Nossos Veículos</a>
+    </div>
+  </section>
+
+  <!-- Veículos em Destaque -->
+  <section class="vehicles" id="veiculos">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2 class="section-title">Veículos em <span class="text-gold">Destaque</span></h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Conheça nossa seleção exclusiva de automóveis de luxo</p>
+      </div>
+
+      <div class="vehicles__grid fade-in">
+        <div class="vehicles__card">
+          <div class="vehicles__card-image">
+            <div class="vehicles__card-placeholder">
+              <span>Mercedes-Benz</span>
+            </div>
+            <span class="vehicles__card-badge">Destaque</span>
+          </div>
+          <div class="vehicles__card-body">
+            <h3 class="vehicles__card-title">Mercedes-Benz S-Class</h3>
+            <p class="vehicles__card-year">2024</p>
+            <p class="vehicles__card-price">R$ 1.250.000</p>
+            <a href="#cadastro" class="vehicles__card-btn">Ver Detalhes</a>
+          </div>
+        </div>
+
+        <div class="vehicles__card">
+          <div class="vehicles__card-image">
+            <div class="vehicles__card-placeholder">
+              <span>BMW</span>
+            </div>
+            <span class="vehicles__card-badge">Novo</span>
+          </div>
+          <div class="vehicles__card-body">
+            <h3 class="vehicles__card-title">BMW Série 7</h3>
+            <p class="vehicles__card-year">2024</p>
+            <p class="vehicles__card-price">R$ 980.000</p>
+            <a href="#cadastro" class="vehicles__card-btn">Ver Detalhes</a>
+          </div>
+        </div>
+
+        <div class="vehicles__card">
+          <div class="vehicles__card-image">
+            <div class="vehicles__card-placeholder">
+              <span>Porsche</span>
+            </div>
+            <span class="vehicles__card-badge">Exclusivo</span>
+          </div>
+          <div class="vehicles__card-body">
+            <h3 class="vehicles__card-title">Porsche 911 Turbo S</h3>
+            <p class="vehicles__card-year">2024</p>
+            <p class="vehicles__card-price">R$ 1.890.000</p>
+            <a href="#cadastro" class="vehicles__card-btn">Ver Detalhes</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre Nós -->
+  <section class="about" id="sobre">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2 class="section-title">Sobre a <span class="text-gold">Grand Auto</span></h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="about__content fade-in">
+        <div class="about__text">
+          <h3 class="about__heading">Tradição e Excelência desde 2016</h3>
+          <p class="about__paragraph">
+            A Grand Auto nasceu da paixão por automóveis excepcionais. Há mais de 10 anos, nos dedicamos a oferecer uma experiência única na aquisição de veículos de luxo, combinando atendimento personalizado com os melhores automóveis do mercado.
+          </p>
+          <p class="about__paragraph">
+            Nossa equipe de especialistas está preparada para encontrar o veículo perfeito para você, garantindo qualidade, procedência e satisfação em cada negociação.
+          </p>
+        </div>
+        <div class="about__image">
+          <div class="about__image-placeholder">
+            <span>Grand Auto</span>
+            <small>Showroom</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="about__counters fade-in" id="counters">
+        <div class="about__counter" data-target="500">
+          <span class="about__counter-number">0</span>
+          <span class="about__counter-plus">+</span>
+          <p class="about__counter-label">Veículos Vendidos</p>
+        </div>
+        <div class="about__counter" data-target="10">
+          <span class="about__counter-number">0</span>
+          <span class="about__counter-plus">+</span>
+          <p class="about__counter-label">Anos de Experiência</p>
+        </div>
+        <div class="about__counter" data-target="1000">
+          <span class="about__counter-number">0</span>
+          <span class="about__counter-plus">+</span>
+          <p class="about__counter-label">Clientes Satisfeitos</p>
+        </div>
+        <div class="about__counter" data-target="50">
+          <span class="about__counter-number">0</span>
+          <span class="about__counter-plus">+</span>
+          <p class="about__counter-label">Marcas Disponíveis</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Depoimentos -->
+  <section class="testimonials" id="depoimentos">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2 class="section-title">O que nossos <span class="text-gold">Clientes</span> dizem</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">A satisfação dos nossos clientes é o nosso maior orgulho</p>
+      </div>
+
+      <div class="testimonials__grid fade-in">
+        <div class="testimonials__card">
+          <div class="testimonials__quote">&ldquo;</div>
+          <p class="testimonials__text">Experiência impecável do início ao fim. A equipe da Grand Auto me ajudou a encontrar o carro perfeito. Atendimento de primeira classe!</p>
+          <div class="testimonials__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonials__author">Ricardo Mendes</p>
+          <p class="testimonials__role">Empresário</p>
+        </div>
+
+        <div class="testimonials__card">
+          <div class="testimonials__quote">&ldquo;</div>
+          <p class="testimonials__text">Comprei meu terceiro veículo na Grand Auto. A confiança e transparência que eles oferecem são incomparáveis. Recomendo a todos!</p>
+          <div class="testimonials__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonials__author">Ana Carolina Silva</p>
+          <p class="testimonials__role">Médica</p>
+        </div>
+
+        <div class="testimonials__card">
+          <div class="testimonials__quote">&ldquo;</div>
+          <p class="testimonials__text">Profissionalismo e dedicação excepcionais. A Grand Auto entende o que o cliente de luxo espera. Meu Porsche foi entregue em perfeitas condições.</p>
+          <div class="testimonials__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonials__author">Fernando Costa</p>
+          <p class="testimonials__role">Advogado</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulário de Cadastro -->
+  <section class="register" id="cadastro">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2 class="section-title"><span class="text-gold">Cadastre-se</span></h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Receba ofertas exclusivas e seja o primeiro a conhecer nossos novos veículos</p>
+      </div>
+
+      <div class="register__form-wrapper fade-in">
+        <form class="register__form" id="registerForm" novalidate>
+          <div class="register__field">
+            <label for="name" class="register__label">Nome Completo</label>
+            <input type="text" id="name" name="name" class="register__input" placeholder="Seu nome completo" required>
+            <span class="register__error" id="nameError"></span>
+          </div>
+
+          <div class="register__field">
+            <label for="email" class="register__label">E-mail</label>
+            <input type="email" id="email" name="email" class="register__input" placeholder="seu@email.com" required>
+            <span class="register__error" id="emailError"></span>
+          </div>
+
+          <div class="register__field">
+            <label for="phone" class="register__label">Telefone</label>
+            <input type="tel" id="phone" name="phone" class="register__input" placeholder="(11) 99999-9999" required>
+            <span class="register__error" id="phoneError"></span>
+          </div>
+
+          <div class="register__field">
+            <label for="vehicle" class="register__label">Veículo de Interesse</label>
+            <select id="vehicle" name="vehicle" class="register__input register__select" required>
+              <option value="" disabled selected>Selecione uma marca</option>
+              <option value="mercedes">Mercedes-Benz</option>
+              <option value="bmw">BMW</option>
+              <option value="porsche">Porsche</option>
+              <option value="audi">Audi</option>
+              <option value="jaguar">Jaguar</option>
+              <option value="land-rover">Land Rover</option>
+              <option value="ferrari">Ferrari</option>
+              <option value="lamborghini">Lamborghini</option>
+              <option value="maserati">Maserati</option>
+              <option value="outro">Outro</option>
+            </select>
+            <span class="register__error" id="vehicleError"></span>
+          </div>
+
+          <button type="submit" class="register__submit">Enviar Cadastro</button>
+          <div class="register__success" id="successMessage">
+            <span class="register__success-icon">&#10003;</span>
+            <p>Cadastro realizado com sucesso! Entraremos em contato em breve.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="contato">
+    <div class="footer__top">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__col">
+            <h3 class="footer__brand">Grand <span class="text-gold">Auto</span></h3>
+            <p class="footer__description">Sua concessionária de carros de luxo. Oferecemos os melhores veículos do mercado com atendimento personalizado e exclusivo.</p>
+          </div>
+
+          <div class="footer__col">
+            <h4 class="footer__heading">Links Rápidos</h4>
+            <ul class="footer__links">
+              <li><a href="#inicio">Início</a></li>
+              <li><a href="#veiculos">Veículos</a></li>
+              <li><a href="#sobre">Sobre Nós</a></li>
+              <li><a href="#cadastro">Cadastro</a></li>
+            </ul>
+          </div>
+
+          <div class="footer__col">
+            <h4 class="footer__heading">Contato</h4>
+            <ul class="footer__info">
+              <li>&#128205; Av. Europa, 1500 - São Paulo, SP</li>
+              <li>&#128222; (11) 3000-0000</li>
+              <li>&#9993; contato@grandauto.com.br</li>
+            </ul>
+          </div>
+
+          <div class="footer__col">
+            <h4 class="footer__heading">Horário</h4>
+            <ul class="footer__info">
+              <li>Seg - Sex: 9h às 19h</li>
+              <li>Sábado: 9h às 14h</li>
+              <li>Domingo: Fechado</li>
+            </ul>
+            <div class="footer__social">
+              <a href="#" class="footer__social-link" aria-label="Facebook">f</a>
+              <a href="#" class="footer__social-link" aria-label="Instagram">in</a>
+              <a href="#" class="footer__social-link" aria-label="YouTube">&#9654;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container">
+        <p>&copy; 2026 Grand Auto. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="dist/main.js"></script>
+</body>
+</html>
