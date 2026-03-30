@@ -50,7 +50,7 @@
   overflow-y: visible;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  padding: 20px 0;
+  padding: 20px 40px;
   flex: 1;
   -ms-overflow-style: none;
   scrollbar-width: none;
