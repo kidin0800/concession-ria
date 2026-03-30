@@ -73,13 +73,34 @@ function initCarousel() {
         dotsContainer.appendChild(dot);
     });
     const dots = Array.from(dotsContainer.querySelectorAll('.vehicles__dot'));
+    const CARDS_PER_SLIDE = 3;
     function getCardWidth() {
         return cards[0].offsetWidth + 24; // card + gap
+    }
+    function smoothScrollTo(target, duration) {
+        const start = grid.scrollLeft;
+        const distance = target - start;
+        const startTime = performance.now();
+        function easeInOutCubic(t) {
+            return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+        }
+        function step(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = easeInOutCubic(progress);
+            grid.scrollLeft = start + distance * eased;
+            if (progress < 1) {
+                requestAnimationFrame(step);
+            }
+        }
+        requestAnimationFrame(step);
     }
     function goToSlide(index) {
         currentIndex = Math.max(0, Math.min(index, totalCards - 1));
         const cardW = getCardWidth();
-        grid.scrollTo({ left: currentIndex * cardW, behavior: 'smooth' });
+        const maxScroll = grid.scrollWidth - grid.clientWidth;
+        const target = Math.min(currentIndex * cardW, maxScroll);
+        smoothScrollTo(target, 600);
         updateState();
     }
     function updateFromScroll() {
@@ -120,8 +141,8 @@ function initCarousel() {
             rightBtn.classList.remove('vehicles__arrow--hidden');
         }
     }
-    rightBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
-    leftBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+    rightBtn.addEventListener('click', () => goToSlide(currentIndex + CARDS_PER_SLIDE));
+    leftBtn.addEventListener('click', () => goToSlide(currentIndex - CARDS_PER_SLIDE));
     let scrollTimer;
     grid.addEventListener('scroll', () => {
         clearTimeout(scrollTimer);

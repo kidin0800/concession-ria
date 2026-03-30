@@ -80,7 +80,6 @@
   padding: 30px 80px;
   overflow-x: auto;
   overflow-y: visible;
-  scroll-behavior: smooth;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
