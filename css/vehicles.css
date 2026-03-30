@@ -9,7 +9,6 @@
   position: relative;
   display: flex;
   align-items: center;
-  gap: 10px;
 }
 
 .vehicles__grid {
@@ -22,6 +21,16 @@
   flex: 1;
 }
 
+/* Section full width */
+.vehicles .container {
+  max-width: 100%;
+  padding: 0;
+}
+
+.vehicles .section-header {
+  padding: 0 20px;
+}
+
 .vehicles__grid .vehicles__card {
   min-width: 380px;
   max-width: 380px;
@@ -31,6 +40,9 @@
 
 /* Arrows */
 .vehicles__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,12 +50,20 @@
   height: 45px;
   border-radius: 50%;
   border: 1px solid rgba(201, 168, 76, 0.3);
-  background: rgba(26, 26, 26, 0.9);
+  background: rgba(10, 10, 10, 0.85);
   color: var(--color-gold);
   cursor: pointer;
   flex-shrink: 0;
   transition: var(--transition);
-  z-index: 2;
+  z-index: 10;
+}
+
+.vehicles__arrow--left {
+  left: 15px;
+}
+
+.vehicles__arrow--right {
+  right: 15px;
 }
 
 .vehicles__arrow:hover {
