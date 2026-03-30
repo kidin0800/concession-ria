@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="css/about.css">
   <link rel="stylesheet" href="css/testimonials.css">
   <link rel="stylesheet" href="css/form.css">
+  <link rel="stylesheet" href="css/brands.css">
   <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
@@ -173,6 +174,46 @@
       </div>
 
       <div class="vehicles__dots" id="vehiclesDots"></div>
+    </div>
+  </section>
+
+  <!-- Marcas -->
+  <section class="brands" id="marcas">
+    <div class="container">
+      <div class="brands__header">
+        <div class="brands__active-logo" id="brandLogo">
+          <span class="brands__logo-text" id="brandLogoText">Mercedes-Benz</span>
+        </div>
+        <div class="brands__selector">
+          <button class="brands__brand-btn active" data-brand="Mercedes-Benz" title="Mercedes-Benz">
+            <span>MB</span>
+          </button>
+          <button class="brands__brand-btn" data-brand="BMW" title="BMW">
+            <span>BMW</span>
+          </button>
+          <button class="brands__brand-btn" data-brand="Porsche" title="Porsche">
+            <span>P</span>
+          </button>
+          <button class="brands__brand-btn" data-brand="Audi" title="Audi">
+            <span>A</span>
+          </button>
+          <button class="brands__brand-btn" data-brand="Land Rover" title="Land Rover">
+            <span>LR</span>
+          </button>
+          <button class="brands__brand-btn" data-brand="Ferrari" title="Ferrari">
+            <span>F</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="brands__title-row">
+        <h2 class="brands__title">Veículos <span class="text-gold" id="brandName">Mercedes-Benz</span></h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="brands__grid" id="brandsGrid">
+        <!-- Cards serão gerados via TypeScript -->
+      </div>
     </div>
   </section>
 
