@@ -79,10 +79,8 @@ function initCarousel() {
     function goToSlide(index) {
         currentIndex = Math.max(0, Math.min(index, totalCards - 1));
         const cardW = getCardWidth();
-        const containerW = grid.parentElement.clientWidth;
-        const centerOffset = (containerW - cards[0].offsetWidth) / 2 - 80; // 80 = padding-left
-        const offset = currentIndex * cardW - centerOffset;
-        grid.style.transform = `translateX(-${Math.max(0, offset)}px)`;
+        const offset = currentIndex * cardW;
+        grid.style.transform = `translateX(-${offset}px)`;
         updateState();
     }
     function updateState() {
