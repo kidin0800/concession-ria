@@ -23,8 +23,8 @@
 }
 
 .vehicles__grid .vehicles__card {
-  min-width: 300px;
-  max-width: 300px;
+  min-width: 380px;
+  max-width: 380px;
   flex-shrink: 0;
   scroll-snap-align: start;
 }
@@ -69,7 +69,7 @@
 
 .vehicles__card-image {
   position: relative;
-  height: 140px;
+  height: 180px;
   overflow: hidden;
 }
 
@@ -107,13 +107,13 @@
 }
 
 .vehicles__card-body {
-  padding: 15px;
+  padding: 18px 20px;
 }
 
 .vehicles__card-title {
   font-family: var(--font-display);
-  font-size: 1.1rem;
-  margin-bottom: 6px;
+  font-size: 1.3rem;
+  margin-bottom: 8px;
 }
 
 .vehicles__card-details {
@@ -131,10 +131,10 @@
 }
 
 .vehicles__card-price {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: var(--color-gold);
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .vehicles__card-btn {

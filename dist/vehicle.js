@@ -60,7 +60,7 @@ function initCarousel() {
     const rightBtn = document.getElementById('vehiclesRight');
     if (!grid || !leftBtn || !rightBtn)
         return;
-    const scrollAmount = 320; // card width + gap
+    const scrollAmount = 400; // card width + gap
     rightBtn.addEventListener('click', () => {
         grid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     });
