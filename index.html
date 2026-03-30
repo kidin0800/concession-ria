@@ -61,63 +61,228 @@
     </div>
   </section>
 
-  <!-- Veículos em Destaque -->
+  <!-- Todos os Veículos -->
   <section class="vehicles" id="veiculos">
     <div class="container">
       <div class="section-header fade-in">
-        <h2 class="section-title">Veículos em <span class="text-gold">Destaque</span></h2>
+        <h2 class="section-title">Todos os <span class="text-gold">Veículos</span></h2>
         <div class="section-divider"></div>
-        <p class="section-subtitle">Conheça nossa seleção exclusiva de automóveis de luxo</p>
+        <p class="section-subtitle">Explore nosso catálogo completo de automóveis de luxo</p>
       </div>
 
       <div class="vehicles__grid fade-in">
-        <div class="vehicles__card">
+
+        <div class="vehicles__card" data-vehicle="mercedes-s-class" data-brand="Mercedes-Benz" data-model="S-Class 500" data-year="2024" data-price="1250000" data-km="0" data-fuel="Gasolina" data-transmission="Automático" data-power="449 cv" data-color="Preto Obsidiana">
           <div class="vehicles__card-image">
-            <div class="vehicles__card-placeholder">
-              <span>Mercedes-Benz</span>
-            </div>
-            <span class="vehicles__card-badge">Destaque</span>
+            <div class="vehicles__card-placeholder"><span>Mercedes-Benz</span></div>
+            <span class="vehicles__card-badge">Novo</span>
           </div>
           <div class="vehicles__card-body">
             <h3 class="vehicles__card-title">Mercedes-Benz S-Class</h3>
-            <p class="vehicles__card-year">2024</p>
+            <div class="vehicles__card-details">
+              <span>2024</span><span>0 km</span><span>Automático</span>
+            </div>
             <p class="vehicles__card-price">R$ 1.250.000</p>
-            <a href="#cadastro" class="vehicles__card-btn">Ver Detalhes</a>
+            <button class="vehicles__card-btn" data-action="details">Ver Detalhes</button>
           </div>
         </div>
 
-        <div class="vehicles__card">
+        <div class="vehicles__card" data-vehicle="bmw-serie7" data-brand="BMW" data-model="Série 7 740i" data-year="2024" data-price="980000" data-km="0" data-fuel="Gasolina" data-transmission="Automático" data-power="380 cv" data-color="Branco Mineral">
           <div class="vehicles__card-image">
-            <div class="vehicles__card-placeholder">
-              <span>BMW</span>
-            </div>
+            <div class="vehicles__card-placeholder"><span>BMW</span></div>
             <span class="vehicles__card-badge">Novo</span>
           </div>
           <div class="vehicles__card-body">
             <h3 class="vehicles__card-title">BMW Série 7</h3>
-            <p class="vehicles__card-year">2024</p>
+            <div class="vehicles__card-details">
+              <span>2024</span><span>0 km</span><span>Automático</span>
+            </div>
             <p class="vehicles__card-price">R$ 980.000</p>
-            <a href="#cadastro" class="vehicles__card-btn">Ver Detalhes</a>
+            <button class="vehicles__card-btn" data-action="details">Ver Detalhes</button>
           </div>
         </div>
 
-        <div class="vehicles__card">
+        <div class="vehicles__card" data-vehicle="porsche-911" data-brand="Porsche" data-model="911 Turbo S" data-year="2024" data-price="1890000" data-km="0" data-fuel="Gasolina" data-transmission="PDK" data-power="650 cv" data-color="Cinza Quartzo">
           <div class="vehicles__card-image">
-            <div class="vehicles__card-placeholder">
-              <span>Porsche</span>
-            </div>
+            <div class="vehicles__card-placeholder"><span>Porsche</span></div>
             <span class="vehicles__card-badge">Exclusivo</span>
           </div>
           <div class="vehicles__card-body">
             <h3 class="vehicles__card-title">Porsche 911 Turbo S</h3>
-            <p class="vehicles__card-year">2024</p>
+            <div class="vehicles__card-details">
+              <span>2024</span><span>0 km</span><span>PDK</span>
+            </div>
             <p class="vehicles__card-price">R$ 1.890.000</p>
-            <a href="#cadastro" class="vehicles__card-btn">Ver Detalhes</a>
+            <button class="vehicles__card-btn" data-action="details">Ver Detalhes</button>
           </div>
         </div>
+
+        <div class="vehicles__card" data-vehicle="audi-a8" data-brand="Audi" data-model="A8 L 60 TFSI" data-year="2024" data-price="890000" data-km="0" data-fuel="Gasolina" data-transmission="Automático" data-power="460 cv" data-color="Azul Navarra">
+          <div class="vehicles__card-image">
+            <div class="vehicles__card-placeholder"><span>Audi</span></div>
+            <span class="vehicles__card-badge">Novo</span>
+          </div>
+          <div class="vehicles__card-body">
+            <h3 class="vehicles__card-title">Audi A8 L</h3>
+            <div class="vehicles__card-details">
+              <span>2024</span><span>0 km</span><span>Automático</span>
+            </div>
+            <p class="vehicles__card-price">R$ 890.000</p>
+            <button class="vehicles__card-btn" data-action="details">Ver Detalhes</button>
+          </div>
+        </div>
+
+        <div class="vehicles__card" data-vehicle="range-rover" data-brand="Land Rover" data-model="Range Rover Autobiography" data-year="2024" data-price="1150000" data-km="0" data-fuel="Diesel" data-transmission="Automático" data-power="350 cv" data-color="Verde British Racing">
+          <div class="vehicles__card-image">
+            <div class="vehicles__card-placeholder"><span>Land Rover</span></div>
+            <span class="vehicles__card-badge">SUV</span>
+          </div>
+          <div class="vehicles__card-body">
+            <h3 class="vehicles__card-title">Range Rover Autobiography</h3>
+            <div class="vehicles__card-details">
+              <span>2024</span><span>0 km</span><span>Automático</span>
+            </div>
+            <p class="vehicles__card-price">R$ 1.150.000</p>
+            <button class="vehicles__card-btn" data-action="details">Ver Detalhes</button>
+          </div>
+        </div>
+
+        <div class="vehicles__card" data-vehicle="ferrari-roma" data-brand="Ferrari" data-model="Roma" data-year="2023" data-price="3200000" data-km="1200" data-fuel="Gasolina" data-transmission="DCT" data-power="620 cv" data-color="Rosso Corsa">
+          <div class="vehicles__card-image">
+            <div class="vehicles__card-placeholder"><span>Ferrari</span></div>
+            <span class="vehicles__card-badge">Esportivo</span>
+          </div>
+          <div class="vehicles__card-body">
+            <h3 class="vehicles__card-title">Ferrari Roma</h3>
+            <div class="vehicles__card-details">
+              <span>2023</span><span>1.200 km</span><span>DCT</span>
+            </div>
+            <p class="vehicles__card-price">R$ 3.200.000</p>
+            <button class="vehicles__card-btn" data-action="details">Ver Detalhes</button>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
+
+  <!-- Modal: Detalhes do Veículo -->
+  <div class="modal" id="vehicleModal">
+    <div class="modal__overlay"></div>
+    <div class="modal__content">
+      <button class="modal__close" id="modalClose">&times;</button>
+
+      <!-- Step 1: Detalhes -->
+      <div class="modal__step" id="stepDetails">
+        <div class="modal__vehicle-header">
+          <div class="modal__vehicle-image">
+            <div class="modal__vehicle-placeholder" id="modalImage"></div>
+          </div>
+          <div class="modal__vehicle-info">
+            <h2 class="modal__vehicle-title" id="modalTitle"></h2>
+            <p class="modal__vehicle-price" id="modalPrice"></p>
+          </div>
+        </div>
+        <div class="modal__specs" id="modalSpecs"></div>
+        <div class="modal__actions">
+          <button class="modal__btn modal__btn--primary" id="btnBuy">Comprar Este Veículo</button>
+          <button class="modal__btn modal__btn--secondary" id="btnContact">Agendar Test Drive</button>
+        </div>
+      </div>
+
+      <!-- Step 2: Dados do Comprador -->
+      <div class="modal__step hidden" id="stepBuyer">
+        <h2 class="modal__step-title">Dados do Comprador</h2>
+        <p class="modal__step-subtitle">Preencha seus dados para iniciar o processo de compra</p>
+        <form class="modal__form" id="buyerForm">
+          <div class="modal__form-row">
+            <div class="modal__form-field">
+              <label>Nome Completo</label>
+              <input type="text" id="buyerName" placeholder="Seu nome completo" required>
+            </div>
+            <div class="modal__form-field">
+              <label>CPF</label>
+              <input type="text" id="buyerCpf" placeholder="000.000.000-00" required>
+            </div>
+          </div>
+          <div class="modal__form-row">
+            <div class="modal__form-field">
+              <label>E-mail</label>
+              <input type="email" id="buyerEmail" placeholder="seu@email.com" required>
+            </div>
+            <div class="modal__form-field">
+              <label>Telefone</label>
+              <input type="tel" id="buyerPhone" placeholder="(11) 99999-9999" required>
+            </div>
+          </div>
+          <div class="modal__form-row">
+            <div class="modal__form-field">
+              <label>Endereço</label>
+              <input type="text" id="buyerAddress" placeholder="Rua, número - Bairro" required>
+            </div>
+            <div class="modal__form-field">
+              <label>Cidade / Estado</label>
+              <input type="text" id="buyerCity" placeholder="São Paulo / SP" required>
+            </div>
+          </div>
+          <div class="modal__actions">
+            <button type="button" class="modal__btn modal__btn--back" id="btnBackToDetails">Voltar</button>
+            <button type="submit" class="modal__btn modal__btn--primary">Continuar</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Step 3: Forma de Pagamento -->
+      <div class="modal__step hidden" id="stepPayment">
+        <h2 class="modal__step-title">Forma de Pagamento</h2>
+        <p class="modal__step-subtitle">Escolha como deseja pagar</p>
+        <div class="modal__payment-summary" id="paymentSummary"></div>
+        <div class="modal__payment-options">
+          <label class="modal__payment-option">
+            <input type="radio" name="payment" value="avista" checked>
+            <div class="modal__payment-card">
+              <strong>À Vista</strong>
+              <span class="modal__payment-desc">Transferência bancária com <span class="text-gold">5% de desconto</span></span>
+              <span class="modal__payment-value" id="priceAvista"></span>
+            </div>
+          </label>
+          <label class="modal__payment-option">
+            <input type="radio" name="payment" value="financiamento">
+            <div class="modal__payment-card">
+              <strong>Financiamento</strong>
+              <span class="modal__payment-desc">Em até 60x com entrada de 30%</span>
+              <span class="modal__payment-value" id="priceFinanciamento"></span>
+            </div>
+          </label>
+          <label class="modal__payment-option">
+            <input type="radio" name="payment" value="consorcio">
+            <div class="modal__payment-card">
+              <strong>Consórcio</strong>
+              <span class="modal__payment-desc">Parcelas reduzidas sem juros</span>
+              <span class="modal__payment-value" id="priceConsorcio"></span>
+            </div>
+          </label>
+        </div>
+        <div class="modal__actions">
+          <button class="modal__btn modal__btn--back" id="btnBackToBuyer">Voltar</button>
+          <button class="modal__btn modal__btn--primary" id="btnConfirm">Confirmar Compra</button>
+        </div>
+      </div>
+
+      <!-- Step 4: Confirmação -->
+      <div class="modal__step hidden" id="stepConfirmation">
+        <div class="modal__confirmation">
+          <div class="modal__confirmation-icon">&#10003;</div>
+          <h2 class="modal__step-title">Pedido Realizado!</h2>
+          <p class="modal__step-subtitle">Seu pedido de compra foi registrado com sucesso.</p>
+          <div class="modal__confirmation-details" id="confirmationDetails"></div>
+          <p class="modal__confirmation-note">Nossa equipe entrará em contato em até 24 horas para finalizar os detalhes da sua compra.</p>
+          <button class="modal__btn modal__btn--primary" id="btnCloseConfirm">Fechar</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
 
   <!-- Sobre Nós -->
   <section class="about" id="sobre">
