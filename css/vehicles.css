@@ -77,12 +77,9 @@
   scroll-snap-align: start;
 }
 
-.vehicles__grid .vehicles__card:first-child {
-  margin-left: 60px;
-}
-
-.vehicles__grid .vehicles__card:last-child {
-  margin-right: 60px;
+.vehicles__grid {
+  padding-left: 60px;
+  padding-right: 60px;
 }
 
 /* Arrows */
