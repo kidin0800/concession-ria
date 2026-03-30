@@ -50,7 +50,7 @@
   overflow-y: visible;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  padding: 20px 40px;
+  padding: 20px 0;
   flex: 1;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -70,9 +70,14 @@
   padding: 0 20px;
 }
 
+.vehicles__spacer {
+  min-width: 30px;
+  flex-shrink: 0;
+}
+
 .vehicles__grid .vehicles__card {
-  min-width: calc((100vw - 120px) / 3);
-  max-width: calc((100vw - 120px) / 3);
+  min-width: calc((100vw - 140px) / 3);
+  max-width: calc((100vw - 140px) / 3);
   flex-shrink: 0;
   scroll-snap-align: start;
 }
