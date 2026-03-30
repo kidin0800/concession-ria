@@ -46,11 +46,18 @@
 .vehicles__grid {
   display: flex;
   gap: 20px;
-  overflow-x: hidden;
+  overflow-x: auto;
+  overflow-y: visible;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  padding: 10px 0;
+  padding: 20px 0;
   flex: 1;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.vehicles__grid::-webkit-scrollbar {
+  display: none;
 }
 
 /* Section full width */
