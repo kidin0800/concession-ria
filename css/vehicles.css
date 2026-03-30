@@ -41,7 +41,27 @@
   position: relative;
   display: flex;
   align-items: center;
-  margin: 0 40px;
+}
+
+.vehicles__carousel::before,
+.vehicles__carousel::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 60px;
+  height: 100%;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.vehicles__carousel::before {
+  left: 0;
+  background: linear-gradient(to right, var(--color-black) 0%, transparent 100%);
+}
+
+.vehicles__carousel::after {
+  right: 0;
+  background: linear-gradient(to left, var(--color-black) 0%, transparent 100%);
 }
 
 .vehicles__grid {
