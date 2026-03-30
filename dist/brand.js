@@ -16,10 +16,19 @@ const vehicles = [
     { brand: 'Ferrari', model: '296 GTB', year: '2024', price: 4500000, km: '500', fuel: 'Híbrido', transmission: 'DCT', power: '830 cv', color: 'Giallo Modena' },
     { brand: 'Land Rover', model: 'Defender V8', year: '2024', price: 980000, km: '0', fuel: 'Gasolina', transmission: 'Automático', power: '525 cv', color: 'Cinza Eiger' },
 ];
+const brandLogos = {
+    'Mercedes-Benz': `<svg width="70" height="70" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="4"/><line x1="50" y1="10" x2="50" y2="50" stroke="currentColor" stroke-width="3"/><line x1="50" y1="50" x2="15" y2="75" stroke="currentColor" stroke-width="3"/><line x1="50" y1="50" x2="85" y2="75" stroke="currentColor" stroke-width="3"/></svg>`,
+    'BMW': `<svg width="70" height="70" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="4"/><line x1="50" y1="5" x2="50" y2="95" stroke="currentColor" stroke-width="3"/><line x1="5" y1="50" x2="95" y2="50" stroke="currentColor" stroke-width="3"/><text x="50" y="38" text-anchor="middle" fill="currentColor" font-size="14" font-family="sans-serif" font-weight="700">B M W</text></svg>`,
+    'Porsche': `<svg width="70" height="70" viewBox="0 0 100 100"><path d="M50 5 L90 30 L90 75 L50 95 L10 75 L10 30 Z" fill="none" stroke="currentColor" stroke-width="4"/><text x="50" y="55" text-anchor="middle" fill="currentColor" font-size="16" font-family="serif" font-weight="700">P</text></svg>`,
+    'Audi': `<svg width="100" height="50" viewBox="0 0 200 60"><circle cx="30" cy="30" r="24" fill="none" stroke="currentColor" stroke-width="3.5"/><circle cx="72" cy="30" r="24" fill="none" stroke="currentColor" stroke-width="3.5"/><circle cx="114" cy="30" r="24" fill="none" stroke="currentColor" stroke-width="3.5"/><circle cx="156" cy="30" r="24" fill="none" stroke="currentColor" stroke-width="3.5"/></svg>`,
+    'Land Rover': `<svg width="100" height="50" viewBox="0 0 160 60"><ellipse cx="80" cy="30" rx="72" ry="26" fill="none" stroke="currentColor" stroke-width="4"/><text x="80" y="36" text-anchor="middle" fill="currentColor" font-size="14" font-family="sans-serif" font-weight="700" letter-spacing="3">LAND ROVER</text></svg>`,
+    'Ferrari': `<svg width="55" height="70" viewBox="0 0 60 80"><rect x="5" y="5" width="50" height="70" rx="4" fill="none" stroke="currentColor" stroke-width="4"/><path d="M30 20 L18 52 L30 46 L42 52 Z" fill="currentColor"/></svg>`,
+};
 export function initBrand() {
     const grid = document.getElementById('brandsGrid');
     const brandName = document.getElementById('brandName');
     const brandLogoText = document.getElementById('brandLogoText');
+    const brandSvgContainer = document.getElementById('brandLogo');
     const buttons = document.querySelectorAll('.brands__brand-btn');
     if (!grid || !brandName)
         return;
@@ -55,6 +64,18 @@ export function initBrand() {
         currentBrand = brand;
         brandName.textContent = brand;
         brandLogoText.textContent = brand;
+        // Update large SVG logo
+        const svgEl = brandSvgContainer.querySelector('.brands__active-svg');
+        if (svgEl)
+            svgEl.remove();
+        const logoHtml = brandLogos[brand] || '';
+        const temp = document.createElement('div');
+        temp.innerHTML = logoHtml;
+        const newSvg = temp.firstElementChild;
+        if (newSvg) {
+            newSvg.classList.add('brands__active-svg');
+            brandSvgContainer.insertBefore(newSvg, brandLogoText);
+        }
         buttons.forEach(btn => {
             btn.classList.toggle('active', btn.dataset.brand === brand);
         });
