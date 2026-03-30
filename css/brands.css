@@ -163,9 +163,6 @@
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(var(--color-accent-rgb), 0.06);
 }
 
-.brands__card:hover .brands__card-image {
-  transform: translateY(-15px) scale(1.05);
-}
 
 /* Image that "pops out" of the card */
 .brands__card-image {
