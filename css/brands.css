@@ -9,10 +9,10 @@
 
 .brands__header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   margin-bottom: 40px;
-  padding: 0;
+  gap: 30px;
 }
 
 /* Active brand logo */
@@ -58,6 +58,7 @@
   padding: 8px 12px;
   border-radius: 30px;
   border: 1px solid rgba(var(--color-accent-rgb), 0.1);
+  margin-left: auto;
 }
 
 .brands__brand-btn {
