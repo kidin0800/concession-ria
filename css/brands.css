@@ -75,6 +75,12 @@
   object-fit: contain;
 }
 
+.brands__brand-text {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
 .brands__brand-btn:hover {
   background: rgba(var(--color-accent-rgb), 0.15);
   border-color: rgba(var(--color-accent-rgb), 0.3);
