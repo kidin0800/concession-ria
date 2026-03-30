@@ -77,10 +77,6 @@
   scroll-snap-align: start;
 }
 
-.vehicles__grid {
-  padding-left: 60px;
-  padding-right: 60px;
-}
 
 /* Arrows */
 .vehicles__arrow {

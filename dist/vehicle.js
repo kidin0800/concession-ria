@@ -67,15 +67,15 @@ function initCarousel() {
         return card.offsetWidth + 20; // card width + gap
     }
     function updateArrows() {
-        const scrollLeft = grid.scrollLeft;
+        const scrollLeft = Math.round(grid.scrollLeft);
         const maxScroll = grid.scrollWidth - grid.clientWidth;
-        if (scrollLeft <= 5) {
+        if (scrollLeft <= 2) {
             leftBtn.classList.add('vehicles__arrow--hidden');
         }
         else {
             leftBtn.classList.remove('vehicles__arrow--hidden');
         }
-        if (scrollLeft >= maxScroll - 5) {
+        if (maxScroll <= 2 || scrollLeft >= maxScroll - 2) {
             rightBtn.classList.add('vehicles__arrow--hidden');
         }
         else {
