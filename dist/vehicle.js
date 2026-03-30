@@ -79,9 +79,16 @@ function initCarousel() {
     function goToSlide(index) {
         currentIndex = Math.max(0, Math.min(index, totalCards - 1));
         const cardW = getCardWidth();
-        const offset = currentIndex * cardW;
-        grid.style.transform = `translateX(-${offset}px)`;
+        grid.scrollTo({ left: currentIndex * cardW, behavior: 'smooth' });
         updateState();
+    }
+    function updateFromScroll() {
+        const cardW = getCardWidth();
+        const newIndex = Math.round(grid.scrollLeft / cardW);
+        if (newIndex !== currentIndex) {
+            currentIndex = Math.max(0, Math.min(newIndex, totalCards - 1));
+            updateState();
+        }
     }
     function updateState() {
         // Update card states
@@ -99,13 +106,14 @@ function initCarousel() {
             dot.classList.toggle('active', i === currentIndex);
         });
         // Update arrows
-        if (currentIndex <= 0) {
+        const maxScroll = grid.scrollWidth - grid.clientWidth;
+        if (grid.scrollLeft <= 5) {
             leftBtn.classList.add('vehicles__arrow--hidden');
         }
         else {
             leftBtn.classList.remove('vehicles__arrow--hidden');
         }
-        if (currentIndex >= totalCards - 1) {
+        if (grid.scrollLeft >= maxScroll - 5) {
             rightBtn.classList.add('vehicles__arrow--hidden');
         }
         else {
@@ -114,6 +122,27 @@ function initCarousel() {
     }
     rightBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
     leftBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+    let scrollTimer;
+    grid.addEventListener('scroll', () => {
+        clearTimeout(scrollTimer);
+        scrollTimer = window.setTimeout(() => {
+            updateFromScroll();
+        }, 100);
+        // Update arrows in real-time
+        const maxScroll = grid.scrollWidth - grid.clientWidth;
+        if (grid.scrollLeft <= 5) {
+            leftBtn.classList.add('vehicles__arrow--hidden');
+        }
+        else {
+            leftBtn.classList.remove('vehicles__arrow--hidden');
+        }
+        if (grid.scrollLeft >= maxScroll - 5) {
+            rightBtn.classList.add('vehicles__arrow--hidden');
+        }
+        else {
+            rightBtn.classList.remove('vehicles__arrow--hidden');
+        }
+    });
     // Keyboard navigation
     document.addEventListener('keydown', (e) => {
         const modal = document.getElementById('vehicleModal');
@@ -125,9 +154,7 @@ function initCarousel() {
             goToSlide(currentIndex - 1);
     });
     // Init
-    goToSlide(0);
-    // Recalculate on resize
-    window.addEventListener('resize', () => goToSlide(currentIndex));
+    updateState();
 }
 function formatPrice(value) {
     return 'R$ ' + value.toLocaleString('pt-BR');

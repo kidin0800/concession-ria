@@ -78,15 +78,21 @@
   display: flex;
   gap: 24px;
   padding: 30px 80px;
-  overflow: hidden;
-  transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
-  will-change: transform;
+  overflow-x: auto;
+  overflow-y: visible;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.vehicles__grid::-webkit-scrollbar {
+  display: none;
 }
 
 /* ===== Cards ===== */
 .vehicles__card {
-  min-width: calc((100vw - 208px) / 3);
-  max-width: calc((100vw - 208px) / 3);
+  min-width: calc((100vw - 220px) / 3.3);
+  max-width: calc((100vw - 220px) / 3.3);
   flex-shrink: 0;
   background: linear-gradient(160deg, rgba(32, 32, 32, 0.95) 0%, rgba(18, 18, 18, 0.98) 100%);
   border-radius: 16px;
