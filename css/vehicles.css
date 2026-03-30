@@ -41,6 +41,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  margin: 0 40px;
 }
 
 .vehicles__grid {
@@ -70,14 +71,9 @@
   padding: 0 20px;
 }
 
-.vehicles__spacer {
-  min-width: 30px;
-  flex-shrink: 0;
-}
-
 .vehicles__grid .vehicles__card {
-  min-width: calc((100vw - 140px) / 3);
-  max-width: calc((100vw - 140px) / 3);
+  min-width: calc((100vw - 160px) / 3);
+  max-width: calc((100vw - 160px) / 3);
   flex-shrink: 0;
   scroll-snap-align: start;
 }
