@@ -4,6 +4,7 @@ import { initCounters } from './counter.js';
 import { initForm } from './form.js';
 import { initVehicle } from './vehicle.js';
 import { initBrand } from './brand.js';
+import { initShowroom } from './showroom.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
@@ -12,4 +13,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initForm();
   initVehicle();
   initBrand();
+  initShowroom();
 });
