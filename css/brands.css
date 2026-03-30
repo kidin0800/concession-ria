@@ -6,15 +6,13 @@
   position: relative;
 }
 
-.brands .container {
-  position: relative;
-}
 
 .brands__header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 30px;
+  align-items: center;
+  margin-bottom: 40px;
+  padding: 0;
 }
 
 /* Active brand logo */
@@ -22,9 +20,6 @@
   display: flex;
   align-items: center;
   gap: 18px;
-  position: absolute;
-  top: 20px;
-  left: 20px;
 }
 
 .brands__active-img {
