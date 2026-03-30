@@ -1,6 +1,6 @@
 /* ===== Register/Form Section ===== */
 .register {
-  padding: 100px 0;
+  padding: 40px 0;
   background: var(--color-dark);
 }
 
@@ -10,12 +10,12 @@
   background: rgba(45, 45, 45, 0.5);
   border: 1px solid rgba(201, 168, 76, 0.15);
   border-radius: 16px;
-  padding: 50px 40px;
+  padding: 30px 30px;
   backdrop-filter: blur(10px);
 }
 
 .register__field {
-  margin-bottom: 25px;
+  margin-bottom: 18px;
 }
 
 .register__label {
@@ -30,7 +30,7 @@
 
 .register__input {
   width: 100%;
-  padding: 14px 0;
+  padding: 10px 0;
   background: transparent;
   border: none;
   border-bottom: 2px solid var(--color-dark-medium);

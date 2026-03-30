@@ -1,13 +1,13 @@
 /* ===== Vehicles Section ===== */
 .vehicles {
-  padding: 100px 0;
+  padding: 40px 0;
   background: var(--color-black);
 }
 
 .vehicles__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  gap: 20px;
 }
 
 .vehicles__card {
@@ -26,7 +26,7 @@
 
 .vehicles__card-image {
   position: relative;
-  height: 220px;
+  height: 150px;
   overflow: hidden;
 }
 
@@ -64,7 +64,7 @@
 }
 
 .vehicles__card-body {
-  padding: 25px;
+  padding: 15px;
 }
 
 .vehicles__card-title {
@@ -80,10 +80,10 @@
 }
 
 .vehicles__card-price {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--color-gold);
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 
 .vehicles__card-btn {
