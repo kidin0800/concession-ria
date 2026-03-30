@@ -4,6 +4,12 @@
   background: var(--color-dark);
   min-height: 80vh;
   position: relative;
+  overflow: hidden;
+}
+
+.brands .container {
+  max-width: 100%;
+  padding: 0 20px;
 }
 
 
@@ -19,7 +25,8 @@
 .brands__active-logo {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 15px;
+  margin-left: -10px;
 }
 
 .brands__active-img {
