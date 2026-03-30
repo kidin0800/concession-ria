@@ -7,54 +7,8 @@
   box-sizing: border-box;
 }
 
-/* ===== CSS Variables - Default (Black & Gold) ===== */
+/* ===== CSS Variables - Sapphire Royal ===== */
 :root {
-  --color-black: #0a0a0a;
-  --color-dark: #1a1a1a;
-  --color-dark-medium: #2d2d2d;
-  --color-gold: #c9a84c;
-  --color-gold-light: #d4af37;
-  --color-white: #ffffff;
-  --color-gray: #999999;
-  --color-light-gray: #cccccc;
-  --color-accent-rgb: 201, 168, 76;
-
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-body: 'Montserrat', 'Segoe UI', sans-serif;
-
-  --transition: all 0.3s ease;
-  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.3);
-  --shadow-hover: 0 20px 50px rgba(var(--color-accent-rgb), 0.15);
-}
-
-/* ===== Theme: Midnight Blue & Gold ===== */
-[data-theme="midnight"] {
-  --color-black: #0a0f1a;
-  --color-dark: #141c2e;
-  --color-dark-medium: #1e2a42;
-  --color-gold: #c9a84c;
-  --color-gold-light: #d4af37;
-  --color-white: #f0f2f8;
-  --color-gray: #8a92a1;
-  --color-light-gray: #b8bfcc;
-  --color-accent-rgb: 201, 168, 76;
-}
-
-/* ===== Theme: Emerald & Silver ===== */
-[data-theme="emerald"] {
-  --color-black: #080f0b;
-  --color-dark: #0f1a14;
-  --color-dark-medium: #1a2e22;
-  --color-gold: #50c878;
-  --color-gold-light: #c0c0c0;
-  --color-white: #f0f0f0;
-  --color-gray: #7a8a7e;
-  --color-light-gray: #a8b5ac;
-  --color-accent-rgb: 80, 200, 120;
-}
-
-/* ===== Theme: Sapphire Royal ===== */
-[data-theme="sapphire"] {
   --color-black: #060816;
   --color-dark: #0e1230;
   --color-dark-medium: #1a2044;
@@ -64,32 +18,13 @@
   --color-gray: #8a8ea1;
   --color-light-gray: #b0b5cc;
   --color-accent-rgb: 30, 58, 138;
-}
 
-/* ===== Theme: Electric Cobalt ===== */
-[data-theme="cobalt"] {
-  --color-black: #050510;
-  --color-dark: #0c0c1e;
-  --color-dark-medium: #181838;
-  --color-gold: #2563eb;
-  --color-gold-light: #60a5fa;
-  --color-white: #f0f4ff;
-  --color-gray: #7a82a1;
-  --color-light-gray: #a8b0cc;
-  --color-accent-rgb: 37, 99, 235;
-}
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Montserrat', 'Segoe UI', sans-serif;
 
-/* ===== Theme: Ice Blue ===== */
-[data-theme="ice"] {
-  --color-black: #080d14;
-  --color-dark: #111827;
-  --color-dark-medium: #1e293b;
-  --color-gold: #38bdf8;
-  --color-gold-light: #7dd3fc;
-  --color-white: #f0f9ff;
-  --color-gray: #7e8fa6;
-  --color-light-gray: #a8b8cc;
-  --color-accent-rgb: 56, 189, 248;
+  --transition: all 0.3s ease;
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.3);
+  --shadow-hover: 0 20px 50px rgba(var(--color-accent-rgb), 0.15);
 }
 
 html {
@@ -191,48 +126,3 @@ img {
   background-color: var(--color-gold);
   color: var(--color-black);
 }
-
-/* ===== Theme Switcher ===== */
-.theme-switcher {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  z-index: 1500;
-  display: flex;
-  gap: 8px;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  padding: 10px 14px;
-  border-radius: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-.theme-switcher__btn {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  padding: 0;
-}
-
-.theme-switcher__btn:hover {
-  transform: scale(1.2);
-  border-color: rgba(255, 255, 255, 0.6);
-}
-
-.theme-switcher__btn.active {
-  border-color: #ffffff;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
-  transform: scale(1.15);
-}
-
-.theme-switcher__btn[data-theme="default"] { background: linear-gradient(135deg, #0a0a0a 50%, #c9a84c 50%); }
-.theme-switcher__btn[data-theme="midnight"] { background: linear-gradient(135deg, #0a0f1a 50%, #c9a84c 50%); }
-.theme-switcher__btn[data-theme="emerald"] { background: linear-gradient(135deg, #080f0b 50%, #50c878 50%); }
-.theme-switcher__btn[data-theme="sapphire"] { background: linear-gradient(135deg, #060816 50%, #1e3a8a 50%); }
-.theme-switcher__btn[data-theme="cobalt"] { background: linear-gradient(135deg, #050510 50%, #2563eb 50%); }
-.theme-switcher__btn[data-theme="ice"] { background: linear-gradient(135deg, #080d14 50%, #38bdf8 50%); }

@@ -3,10 +3,7 @@ import { initScroll } from './scroll.js';
 import { initCounters } from './counter.js';
 import { initForm } from './form.js';
 import { initVehicle } from './vehicle.js';
-import { initTheme } from './theme.js';
-
 document.addEventListener('DOMContentLoaded', () => {
-  initTheme();
   initNavbar();
   initScroll();
   initCounters();
