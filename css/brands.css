@@ -127,17 +127,20 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
+  padding-top: 50px;
 }
 
 /* Brand card */
 .brands__card {
-  background: linear-gradient(160deg, rgba(32, 32, 32, 0.6) 0%, rgba(12, 12, 12, 0.8) 100%);
-  border-radius: 14px;
-  overflow: hidden;
+  background: linear-gradient(180deg, rgba(25, 25, 40, 0.4) 0%, rgba(18, 18, 30, 0.9) 40%);
+  border-radius: 16px;
   border: 1px solid rgba(var(--color-accent-rgb), 0.08);
   cursor: pointer;
   transition: all 0.4s ease;
   animation: brandCardIn 0.4s ease backwards;
+  position: relative;
+  padding-top: 100px;
+  overflow: visible;
 }
 
 .brands__card:nth-child(2) { animation-delay: 0.1s; }
@@ -155,54 +158,128 @@
 }
 
 .brands__card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(var(--color-accent-rgb), 0.3);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4), 0 0 20px rgba(var(--color-accent-rgb), 0.08);
+  transform: translateY(-8px);
+  border-color: rgba(var(--color-accent-rgb), 0.25);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(var(--color-accent-rgb), 0.06);
 }
 
+.brands__card:hover .brands__card-image {
+  transform: translateY(-15px) scale(1.05);
+}
+
+/* Image that "pops out" of the card */
 .brands__card-image {
-  height: 280px;
-  background: linear-gradient(135deg, rgba(var(--color-accent-rgb), 0.04) 0%, rgba(10, 10, 10, 0.6) 100%);
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85%;
+  height: 180px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-display);
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: var(--color-gold-light);
   letter-spacing: 3px;
+  background: linear-gradient(135deg, rgba(var(--color-accent-rgb), 0.08) 0%, rgba(20, 20, 35, 0.9) 100%);
+  border-radius: 12px;
+  border: 1px solid rgba(var(--color-accent-rgb), 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 2;
 }
 
 .brands__card-body {
-  padding: 28px 28px;
+  padding: 28px 28px 30px;
 }
 
-.brands__card-title {
+.brands__card-name {
   font-family: var(--font-display);
   font-size: 1.5rem;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   color: var(--color-white);
+  text-align: center;
 }
 
 .brands__card-specs {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
-  margin-bottom: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .brands__card-specs span {
   font-size: 0.72rem;
   color: var(--color-gray);
-  background: rgba(255, 255, 255, 0.04);
-  padding: 3px 9px;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.brands__card-specs span::before {
+  content: '•';
+  color: var(--color-gold-light);
+}
+
+.brands__card-specs span:first-child::before {
+  display: none;
+}
+
+.brands__card-price-box {
+  background: rgba(var(--color-accent-rgb), 0.06);
+  border: 1px solid rgba(var(--color-accent-rgb), 0.1);
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 18px;
+}
+
+.brands__card-price-label {
+  font-size: 0.7rem;
+  color: var(--color-gray);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
 }
 
 .brands__card-price {
-  font-size: 1.7rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: var(--color-gold-light);
+}
+
+.brands__card-features {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.brands__card-feature {
+  font-size: 0.68rem;
+  color: var(--color-gold-light);
+  background: rgba(var(--color-accent-rgb), 0.08);
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(var(--color-accent-rgb), 0.12);
+}
+
+.brands__card-link {
+  display: block;
+  text-align: center;
+  color: var(--color-gold-light);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(var(--color-accent-rgb), 0.08);
+  transition: all 0.3s ease;
+}
+
+.brands__card-link:hover {
+  color: var(--color-white);
 }
 
 /* Empty state */

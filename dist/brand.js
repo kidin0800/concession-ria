@@ -42,17 +42,25 @@ export function initBrand() {
             return `
         <div class="brands__card">
           <div class="brands__card-image">
-            <span>${v.brand}</span>
+            <span>${v.model}</span>
           </div>
           <div class="brands__card-body">
-            <h3 class="brands__card-title">${v.brand} ${v.model}</h3>
+            <h3 class="brands__card-name">${v.model}</h3>
             <div class="brands__card-specs">
-              <span>${v.year}</span>
-              <span>${kmDisplay}</span>
               <span>${v.power}</span>
+              <span>${v.fuel}</span>
               <span>${v.transmission}</span>
             </div>
-            <p class="brands__card-price">${priceDisplay}</p>
+            <div class="brands__card-price-box">
+              <p class="brands__card-price-label">Preço sugerido</p>
+              <p class="brands__card-price">${priceDisplay}</p>
+            </div>
+            <div class="brands__card-features">
+              <span class="brands__card-feature">${v.year}</span>
+              <span class="brands__card-feature">${kmDisplay}</span>
+              <span class="brands__card-feature">${v.color}</span>
+            </div>
+            <a href="#cadastro" class="brands__card-link">Ir para o Showroom</a>
           </div>
         </div>
       `;
