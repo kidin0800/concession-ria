@@ -10,7 +10,6 @@
     radial-gradient(ellipse at 50% 50%, rgba(30, 30, 30, 0.4) 0%, transparent 70%),
     linear-gradient(180deg, var(--color-black) 0%, #0d0d0d 50%, var(--color-black) 100%);
   position: relative;
-  overflow: hidden;
 }
 
 .vehicles::before {
@@ -49,7 +48,6 @@
 /* ===== Premium Carousel ===== */
 .vehicles__carousel {
   position: relative;
-  overflow: hidden;
 }
 
 /* Edge fade masks */
