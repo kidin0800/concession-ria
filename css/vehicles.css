@@ -32,10 +32,18 @@
 }
 
 .vehicles__grid .vehicles__card {
-  min-width: 380px;
-  max-width: 380px;
+  min-width: calc((100vw - 120px) / 3);
+  max-width: calc((100vw - 120px) / 3);
   flex-shrink: 0;
   scroll-snap-align: start;
+}
+
+.vehicles__grid .vehicles__card:first-child {
+  margin-left: 60px;
+}
+
+.vehicles__grid .vehicles__card:last-child {
+  margin-right: 60px;
 }
 
 /* Arrows */
@@ -553,9 +561,9 @@
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .vehicles__grid .vehicles__card {
-    min-width: 260px;
-    max-width: 260px;
+    min-width: calc(100vw - 120px);
+    max-width: calc(100vw - 120px);
   }
 }
