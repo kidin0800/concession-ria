@@ -58,39 +58,75 @@ function initCarousel() {
     const grid = document.querySelector('.vehicles__grid');
     const leftBtn = document.getElementById('vehiclesLeft');
     const rightBtn = document.getElementById('vehiclesRight');
-    if (!grid || !leftBtn || !rightBtn)
+    const dotsContainer = document.getElementById('vehiclesDots');
+    const cards = Array.from(grid.querySelectorAll('.vehicles__card'));
+    if (!grid || !leftBtn || !rightBtn || cards.length === 0)
         return;
+    let currentIndex = 0;
+    const totalCards = cards.length;
+    // Create dots
+    cards.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'vehicles__dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', `Veículo ${i + 1}`);
+        dot.addEventListener('click', () => goToSlide(i));
+        dotsContainer.appendChild(dot);
+    });
+    const dots = Array.from(dotsContainer.querySelectorAll('.vehicles__dot'));
     function getCardWidth() {
-        const card = grid.querySelector('.vehicles__card');
-        if (!card)
-            return 400;
-        return card.offsetWidth + 20; // card width + gap
+        return cards[0].offsetWidth + 24; // card + gap
     }
-    function updateArrows() {
-        const scrollLeft = Math.round(grid.scrollLeft);
-        const maxScroll = grid.scrollWidth - grid.clientWidth;
-        if (scrollLeft <= 2) {
+    function goToSlide(index) {
+        currentIndex = Math.max(0, Math.min(index, totalCards - 1));
+        const offset = currentIndex * getCardWidth();
+        grid.style.transform = `translateX(-${offset}px)`;
+        updateState();
+    }
+    function updateState() {
+        // Update card states
+        cards.forEach((card, i) => {
+            card.classList.remove('active', 'adjacent');
+            if (i === currentIndex) {
+                card.classList.add('active');
+            }
+            else if (i === currentIndex - 1 || i === currentIndex + 1) {
+                card.classList.add('adjacent');
+            }
+        });
+        // Update dots
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentIndex);
+        });
+        // Update arrows
+        if (currentIndex <= 0) {
             leftBtn.classList.add('vehicles__arrow--hidden');
         }
         else {
             leftBtn.classList.remove('vehicles__arrow--hidden');
         }
-        if (maxScroll <= 2 || scrollLeft >= maxScroll - 2) {
+        if (currentIndex >= totalCards - 1) {
             rightBtn.classList.add('vehicles__arrow--hidden');
         }
         else {
             rightBtn.classList.remove('vehicles__arrow--hidden');
         }
     }
-    rightBtn.addEventListener('click', () => {
-        grid.scrollBy({ left: getCardWidth(), behavior: 'smooth' });
+    rightBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+    leftBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        const modal = document.getElementById('vehicleModal');
+        if (modal.classList.contains('active'))
+            return;
+        if (e.key === 'ArrowRight')
+            goToSlide(currentIndex + 1);
+        if (e.key === 'ArrowLeft')
+            goToSlide(currentIndex - 1);
     });
-    leftBtn.addEventListener('click', () => {
-        grid.scrollBy({ left: -getCardWidth(), behavior: 'smooth' });
-    });
-    grid.addEventListener('scroll', updateArrows);
-    window.addEventListener('resize', updateArrows);
-    updateArrows();
+    // Init
+    goToSlide(0);
+    // Recalculate on resize
+    window.addEventListener('resize', () => goToSlide(currentIndex));
 }
 function formatPrice(value) {
     return 'R$ ' + value.toLocaleString('pt-BR');
