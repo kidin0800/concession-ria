@@ -60,13 +60,37 @@ function initCarousel() {
     const rightBtn = document.getElementById('vehiclesRight');
     if (!grid || !leftBtn || !rightBtn)
         return;
-    const scrollAmount = 400; // card width + gap
+    function getCardWidth() {
+        const card = grid.querySelector('.vehicles__card');
+        if (!card)
+            return 400;
+        return card.offsetWidth + 20; // card width + gap
+    }
+    function updateArrows() {
+        const scrollLeft = grid.scrollLeft;
+        const maxScroll = grid.scrollWidth - grid.clientWidth;
+        if (scrollLeft <= 5) {
+            leftBtn.classList.add('vehicles__arrow--hidden');
+        }
+        else {
+            leftBtn.classList.remove('vehicles__arrow--hidden');
+        }
+        if (scrollLeft >= maxScroll - 5) {
+            rightBtn.classList.add('vehicles__arrow--hidden');
+        }
+        else {
+            rightBtn.classList.remove('vehicles__arrow--hidden');
+        }
+    }
     rightBtn.addEventListener('click', () => {
-        grid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        grid.scrollBy({ left: getCardWidth(), behavior: 'smooth' });
     });
     leftBtn.addEventListener('click', () => {
-        grid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        grid.scrollBy({ left: -getCardWidth(), behavior: 'smooth' });
     });
+    grid.addEventListener('scroll', updateArrows);
+    window.addEventListener('resize', updateArrows);
+    updateArrows();
 }
 function formatPrice(value) {
     return 'R$ ' + value.toLocaleString('pt-BR');
