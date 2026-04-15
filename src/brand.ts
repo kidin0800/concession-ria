@@ -20,12 +20,12 @@ interface BrandTheme {
 }
 
 const brandThemes: Record<string, BrandTheme> = {
-  'Mercedes-Benz': { glow: '#c0c0c0', accent: '#e0e0e0', accentRgb: '192,192,192', bg: 'rgba(192,192,192,0.03)' },
-  'BMW':           { glow: '#1c69d4', accent: '#4a9af5', accentRgb: '74,154,245', bg: 'rgba(28,105,212,0.03)' },
-  'Porsche':       { glow: '#c9a84c', accent: '#e8d48b', accentRgb: '201,168,76', bg: 'rgba(201,168,76,0.03)' },
-  'Audi':          { glow: '#ff0000', accent: '#ff4444', accentRgb: '255,68,68', bg: 'rgba(255,0,0,0.02)' },
-  'CAOA Chery':    { glow: '#8b0000', accent: '#cc3333', accentRgb: '204,51,51', bg: 'rgba(139,0,0,0.03)' },
-  'Ferrari':       { glow: '#ff2800', accent: '#ff5533', accentRgb: '255,40,0', bg: 'rgba(255,40,0,0.03)' },
+  'Mercedes-Benz': { glow: '#c0c0c0', accent: '#d4d4d4', accentRgb: '212,212,212', bg: '#0c0c0c' },
+  'BMW':           { glow: '#1c69d4', accent: '#4a9af5', accentRgb: '74,154,245',  bg: '#060d18' },
+  'Porsche':       { glow: '#c9a84c', accent: '#e8d48b', accentRgb: '201,168,76',  bg: '#100e06' },
+  'Audi':          { glow: '#cc0000', accent: '#ff3333', accentRgb: '255,51,51',   bg: '#120505' },
+  'CAOA Chery':    { glow: '#8b0000', accent: '#cc3333', accentRgb: '204,51,51',   bg: '#100404' },
+  'Ferrari':       { glow: '#ff2800', accent: '#ff5533', accentRgb: '255,85,51',   bg: '#140804' },
 };
 
 const brandImages: Record<string, string> = {
@@ -83,6 +83,7 @@ export function initBrand(): void {
     brandsSection.style.setProperty('--brand-accent', theme.accent);
     brandsSection.style.setProperty('--brand-accent-rgb', theme.accentRgb);
     brandsSection.style.setProperty('--brand-bg', theme.bg);
+    brandsSection.style.backgroundColor = theme.bg;
   }
 
   function renderCards(brand: string): void {
@@ -96,28 +97,24 @@ export function initBrand(): void {
 
       return `
         <div class="brands__card" style="animation-delay: ${delay}s">
-          <div class="brands__card-image">
+          <div class="brands__card-visual">
             <img src="${v.image}" alt="${v.brand} ${v.model}">
           </div>
           <div class="brands__card-body">
+            <div class="brands__card-tags">
+              <span class="brands__tag">${v.year}</span>
+              <span class="brands__tag">${kmDisplay}</span>
+              <span class="brands__tag">${v.fuel}</span>
+            </div>
             <h3 class="brands__card-name">${v.model}</h3>
-            <div class="brands__card-specs">
-              <span>${v.power}</span>
-              <span>${v.fuel}</span>
-              <span>${v.transmission}</span>
-            </div>
-            <div class="brands__card-price-row">
+            <p class="brands__card-specs-line">${v.power} &middot; ${v.transmission} &middot; ${v.color}</p>
+            <div class="brands__card-bottom">
               <p class="brands__card-price">${priceDisplay}</p>
-              <span class="brands__card-badge">${v.year}</span>
+              <a href="#cadastro" class="brands__card-cta">
+                Detalhes
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+              </a>
             </div>
-            <div class="brands__card-meta">
-              <span>${kmDisplay}</span>
-              <span>${v.color}</span>
-            </div>
-            <a href="#cadastro" class="brands__card-cta">
-              <span>Ver detalhes</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
           </div>
         </div>
       `;

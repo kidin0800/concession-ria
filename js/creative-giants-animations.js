@@ -184,18 +184,65 @@
 
   /* ===== Parallax ===== */
   function initParallax() {
+    // Hero car parallax
     var heroImg = document.querySelector('.hero__car-img');
-    if (!heroImg) return;
+    if (heroImg) {
+      gsap.to(heroImg, {
+        yPercent: -15,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.hero',
+          start: 'top top',
+          end: 'bottom top',
+          scrub: 1
+        }
+      });
+    }
 
-    gsap.to(heroImg, {
-      yPercent: -15,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '.hero',
-        start: 'top top',
-        end: 'bottom top',
-        scrub: 1
-      }
+    // About bg text parallax (slow drift)
+    var aboutBgText = document.querySelector('.about__bg-text');
+    if (aboutBgText) {
+      gsap.to(aboutBgText, {
+        yPercent: -20,
+        xPercent: 5,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.about',
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: 1.5
+        }
+      });
+    }
+
+    // Hero stats parallax (rises slower)
+    var heroStats = document.querySelector('.hero__stats');
+    if (heroStats) {
+      gsap.to(heroStats, {
+        yPercent: -30,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.hero',
+          start: 'top top',
+          end: 'bottom top',
+          scrub: 1.2
+        }
+      });
+    }
+
+    // Features section - numbers parallax
+    var featureNums = document.querySelectorAll('.features__num');
+    featureNums.forEach(function(num) {
+      gsap.to(num, {
+        yPercent: -40,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: num,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: 2
+        }
+      });
     });
   }
 
