@@ -153,21 +153,22 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  border: 1px solid rgba(var(--color-gold-rgb), 0.2);
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--color-gold);
-  transition: var(--transition);
+  color: var(--color-gray);
+  transition: all 0.5s var(--ease-out-expo);
 }
 
 .footer__social-link:hover {
   background: var(--color-gold);
   color: var(--color-black);
-  transform: translateY(-3px);
-  box-shadow: 0 4px 15px rgba(var(--color-gold-rgb), 0.3);
+  border-color: var(--color-gold);
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(var(--color-gold-rgb), 0.3);
 }
 
 /* Bottom Bar */

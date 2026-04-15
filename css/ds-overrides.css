@@ -236,27 +236,10 @@ html.lenis body {
 }
 
 /* ===== SplitType Line Reveal ===== */
-[data-line-reveal] .line {
-  overflow: hidden;
-  padding-bottom: 0.05em;
-}
-
-[data-line-reveal] .line > div,
-[data-line-reveal] .line > span {
-  transform: translateY(100%);
-}
+/* Line reveal: GSAP SplitType handles wrapping and initial state */
 
 /* ===== Fade-up Reveal ===== */
-[data-fade] {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: none; /* GSAP handles it */
-}
-
-[data-fade].is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+/* GSAP gsap.from() handles initial state - no CSS needed */
 
 /* ===== Section Spacing Refinement ===== */
 .section-header {
