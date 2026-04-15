@@ -1,4 +1,15 @@
 export function initScroll() {
+    // === Loading Screen ===
+    const loader = document.getElementById('loader');
+    if (loader) {
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                loader.classList.add('hidden');
+                document.body.style.overflow = '';
+            }, 2000);
+        });
+        document.body.style.overflow = 'hidden';
+    }
     // Smooth scroll for anchor links
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
     anchorLinks.forEach(link => {
@@ -72,19 +83,18 @@ export function initScroll() {
         rootMargin: '0px 0px -30px 0px'
     });
     clipElements.forEach(el => clipObserver.observe(el));
-    // 4. Hero load animation - trigger immediately with sequence
+    // 4. Hero load animation - trigger after loader
     const revealElements = document.querySelectorAll('.reveal-text');
     const heroVisual = document.querySelector('.hero__visual');
-    requestAnimationFrame(() => {
-        setTimeout(() => {
-            revealElements.forEach(el => {
-                el.classList.add('visible');
-            });
-            if (heroVisual) {
-                heroVisual.classList.add('visible');
-            }
-        }, 200);
-    });
+    const loaderDelay = loader ? 2200 : 300;
+    setTimeout(() => {
+        revealElements.forEach(el => {
+            el.classList.add('visible');
+        });
+        if (heroVisual) {
+            heroVisual.classList.add('visible');
+        }
+    }, loaderDelay);
     // 5. Parallax elements on scroll
     const parallaxElements = document.querySelectorAll('[data-parallax]');
     if (parallaxElements.length > 0) {

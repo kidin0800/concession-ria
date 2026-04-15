@@ -35,6 +35,7 @@
 
   /* Typography */
   --font-display: 'Playfair Display', Georgia, serif;
+  --font-heading: 'Bebas Neue', 'Impact', sans-serif;
   --font-body: 'Montserrat', 'Segoe UI', sans-serif;
 
   /* Transitions */
@@ -109,11 +110,13 @@ img {
 }
 
 .section-title {
-  font-family: var(--font-display);
-  font-size: 2.6rem;
-  font-weight: 700;
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  font-weight: 400;
   margin-bottom: 12px;
-  line-height: 1.2;
+  line-height: 1.05;
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }
 
 /* ===== Gradient Text ===== */
@@ -284,13 +287,13 @@ img {
 /* ===== Professional Animation System (Champions4Good style) ===== */
 /* Easing: easeOutExpo - cubic-bezier(0.19, 1, 0.22, 1) */
 
-/* 1. Fade-in + Translate */
+/* 1. Fade-in + Translate (dramatic) */
 .fade-in {
   opacity: 0;
-  transform: translate3d(0, 40px, 0);
+  transform: translate3d(0, 80px, 0);
   transition:
-    opacity 0.9s cubic-bezier(0.19, 1, 0.22, 1),
-    transform 0.9s cubic-bezier(0.19, 1, 0.22, 1);
+    opacity 1.2s cubic-bezier(0.19, 1, 0.22, 1),
+    transform 1.4s cubic-bezier(0.19, 1, 0.22, 1);
   will-change: opacity, transform;
 }
 
@@ -299,13 +302,13 @@ img {
   transform: translate3d(0, 0, 0);
 }
 
-/* 2. Scale-in (cards, images) */
+/* 2. Scale-in (cards, images - dramatic) */
 .scale-in {
   opacity: 0;
-  transform: scale(0.92) translate3d(0, 30px, 0);
+  transform: scale(0.85) translate3d(0, 60px, 0);
   transition:
-    opacity 1s cubic-bezier(0.19, 1, 0.22, 1),
-    transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+    opacity 1.2s cubic-bezier(0.19, 1, 0.22, 1),
+    transform 1.4s cubic-bezier(0.19, 1, 0.22, 1);
   will-change: opacity, transform;
 }
 
@@ -317,7 +320,7 @@ img {
 /* 3. Clip Reveal (text bottom-up) */
 .clip-reveal {
   clip-path: inset(100% 0 0 0);
-  transition: clip-path 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: clip-path 1s cubic-bezier(0.19, 1, 0.22, 1);
   will-change: clip-path;
 }
 
@@ -325,13 +328,13 @@ img {
   clip-path: inset(0 0 0 0);
 }
 
-/* 4. Stagger Grid Children */
+/* 4. Stagger Grid Children (dramatic) */
 .stagger-grid > * {
   opacity: 0;
-  transform: translate3d(0, 30px, 0) scale(0.95);
+  transform: translate3d(0, 60px, 0) scale(0.88);
   transition:
-    opacity 0.9s cubic-bezier(0.19, 1, 0.22, 1),
-    transform 0.9s cubic-bezier(0.19, 1, 0.22, 1);
+    opacity 1s cubic-bezier(0.19, 1, 0.22, 1),
+    transform 1.2s cubic-bezier(0.19, 1, 0.22, 1);
   will-change: opacity, transform;
 }
 
@@ -340,13 +343,13 @@ img {
   transform: translate3d(0, 0, 0) scale(1);
 }
 
-/* 5. Slide-in from sides */
+/* 5. Slide-in from sides (dramatic) */
 .slide-left {
   opacity: 0;
-  transform: translate3d(-60px, 0, 0);
+  transform: translate3d(-100px, 0, 0);
   transition:
-    opacity 0.9s cubic-bezier(0.19, 1, 0.22, 1),
-    transform 0.9s cubic-bezier(0.19, 1, 0.22, 1);
+    opacity 1.2s cubic-bezier(0.19, 1, 0.22, 1),
+    transform 1.4s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .slide-left.visible {
@@ -356,10 +359,10 @@ img {
 
 .slide-right {
   opacity: 0;
-  transform: translate3d(60px, 0, 0);
+  transform: translate3d(100px, 0, 0);
   transition:
-    opacity 0.9s cubic-bezier(0.19, 1, 0.22, 1),
-    transform 0.9s cubic-bezier(0.19, 1, 0.22, 1);
+    opacity 1.2s cubic-bezier(0.19, 1, 0.22, 1),
+    transform 1.4s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .slide-right.visible {

@@ -37,11 +37,13 @@
 }
 
 .gold-block__title {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
   color: var(--color-black);
-  line-height: 1.2;
+  line-height: 1.05;
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }
 
 /* Awards/Reconhecimentos List */
