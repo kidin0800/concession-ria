@@ -184,11 +184,11 @@
 
   /* ===== Parallax ===== */
   function initParallax() {
-    // Hero car parallax
+    // Hero car parallax - dramatic
     var heroImg = document.querySelector('.hero__car-img');
     if (heroImg) {
       gsap.to(heroImg, {
-        yPercent: -15,
+        y: -120,
         ease: 'none',
         scrollTrigger: {
           trigger: '.hero',
@@ -199,12 +199,12 @@
       });
     }
 
-    // About bg text parallax (slow drift)
+    // About bg text parallax - dramatic slow drift
     var aboutBgText = document.querySelector('.about__bg-text');
     if (aboutBgText) {
       gsap.to(aboutBgText, {
-        yPercent: -20,
-        xPercent: 5,
+        y: -200,
+        x: 80,
         ease: 'none',
         scrollTrigger: {
           trigger: '.about',
@@ -215,11 +215,11 @@
       });
     }
 
-    // Hero stats parallax (rises slower)
+    // Hero stats parallax
     var heroStats = document.querySelector('.hero__stats');
     if (heroStats) {
       gsap.to(heroStats, {
-        yPercent: -30,
+        y: -80,
         ease: 'none',
         scrollTrigger: {
           trigger: '.hero',
@@ -230,17 +230,49 @@
       });
     }
 
-    // Features section - numbers parallax
+    // Features numbers - each drifts up independently
     var featureNums = document.querySelectorAll('.features__num');
-    featureNums.forEach(function(num) {
+    featureNums.forEach(function(num, i) {
       gsap.to(num, {
-        yPercent: -40,
+        y: -60 - (i * 15),
         ease: 'none',
         scrollTrigger: {
           trigger: num,
           start: 'top bottom',
           end: 'bottom top',
           scrub: 2
+        }
+      });
+    });
+
+    // Brands card images - subtle float on scroll
+    var brandCards = document.querySelectorAll('.brands__card-visual img');
+    brandCards.forEach(function(img) {
+      gsap.to(img, {
+        y: -30,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: img,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: 1.5
+        }
+      });
+    });
+
+    // Testimonial cards stagger on scroll
+    var testimonialCards = document.querySelectorAll('.testimonials__card');
+    testimonialCards.forEach(function(card, i) {
+      gsap.from(card, {
+        y: 80,
+        opacity: 0,
+        duration: 0.8,
+        delay: i * 0.15,
+        ease: 'main',
+        scrollTrigger: {
+          trigger: card,
+          start: 'top 90%',
+          once: true
         }
       });
     });
