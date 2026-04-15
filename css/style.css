@@ -91,6 +91,42 @@ img {
   color: var(--color-gold);
 }
 
+/* ===== Section Numbers (inspirado chkstepan) ===== */
+.section-number {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--color-gold-light);
+  opacity: 0.5;
+  letter-spacing: 4px;
+  margin-bottom: 14px;
+}
+
+/* ===== Section Break / Separadores Premium ===== */
+.section-break {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.section-break__line {
+  width: 100%;
+  max-width: 1200px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(var(--color-accent-rgb), 0.2) 20%,
+    rgba(var(--color-accent-rgb), 0.4) 50%,
+    rgba(var(--color-accent-rgb), 0.2) 80%,
+    transparent 100%
+  );
+  margin: 0 auto;
+}
+
 /* ===== Animations ===== */
 .fade-in {
   opacity: 0;

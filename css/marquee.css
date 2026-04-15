@@ -1,0 +1,117 @@
+/* ===== Marquee de Marcas ===== */
+.marquee {
+  padding: 28px 0;
+  background: var(--color-dark);
+  border-top: 1px solid rgba(var(--color-accent-rgb), 0.1);
+  border-bottom: 1px solid rgba(var(--color-accent-rgb), 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee::before,
+.marquee::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marquee::before {
+  left: 0;
+  background: linear-gradient(to right, var(--color-dark), transparent);
+}
+
+.marquee::after {
+  right: 0;
+  background: linear-gradient(to left, var(--color-dark), transparent);
+}
+
+.marquee__track {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 30s linear infinite;
+}
+
+.marquee__track:hover {
+  animation-play-state: paused;
+}
+
+.marquee__inner {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-shrink: 0;
+}
+
+.marquee__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--color-light-gray);
+  white-space: nowrap;
+  padding: 0 20px;
+  transition: color 0.3s ease;
+}
+
+.marquee__item:hover {
+  color: var(--color-gold-light);
+}
+
+.marquee__logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  filter: brightness(0.7) contrast(1.2);
+  transition: filter 0.3s ease;
+}
+
+.marquee__item:hover .marquee__logo {
+  filter: brightness(1) contrast(1.2);
+}
+
+.marquee__separator {
+  color: rgba(var(--color-accent-rgb), 0.3);
+  font-size: 1.2rem;
+  padding: 0 10px;
+  user-select: none;
+}
+
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .marquee {
+    padding: 20px 0;
+  }
+
+  .marquee__item {
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    padding: 0 15px;
+  }
+
+  .marquee__logo {
+    width: 22px;
+    height: 22px;
+  }
+
+  .marquee::before,
+  .marquee::after {
+    width: 60px;
+  }
+}

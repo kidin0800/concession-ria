@@ -32,6 +32,20 @@ export function initScroll() {
         rootMargin: '0px 0px -50px 0px'
     });
     fadeElements.forEach(el => observer.observe(el));
+    // Text reveal animations (hero)
+    const revealElements = document.querySelectorAll('.reveal-text');
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px 0px 0px'
+    });
+    revealElements.forEach(el => revealObserver.observe(el));
     // Parallax effect on hero
     const hero = document.querySelector('.hero');
     if (hero) {
