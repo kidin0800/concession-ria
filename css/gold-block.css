@@ -1,0 +1,142 @@
+/* ===== Gold Block - Reconhecimentos (inspirado Loket) ===== */
+.gold-block {
+  padding: 80px 0;
+  background: linear-gradient(135deg, var(--color-gold-dark) 0%, var(--color-gold) 50%, var(--color-gold-dark) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.gold-block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 50%, rgba(0, 0, 0, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.gold-block__header {
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 1;
+}
+
+.gold-block__label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 12px;
+}
+
+.gold-block__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--color-black);
+  line-height: 1.2;
+}
+
+/* Awards/Reconhecimentos List */
+.gold-block__list {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.gold-block__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  color: var(--color-black);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+  position: relative;
+}
+
+.gold-block__item:last-child {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.gold-block__item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.08);
+  transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 0;
+}
+
+.gold-block__item:hover::before {
+  width: 100%;
+}
+
+.gold-block__item-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.gold-block__item-name {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+.gold-block__item-arrow {
+  display: flex;
+  align-items: center;
+  color: var(--color-black);
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+}
+
+.gold-block__item:hover .gold-block__item-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.gold-block__item-desc {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gold-block {
+    padding: 60px 0;
+  }
+
+  .gold-block__item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 16px 20px;
+  }
+
+  .gold-block__item-name {
+    font-size: 1.1rem;
+  }
+}

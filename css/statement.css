@@ -1,0 +1,75 @@
+/* ===== Statement Text (inspirado Loket Design) ===== */
+.statement {
+  padding: 60px 0;
+  overflow: hidden;
+  background: var(--color-black);
+  position: relative;
+}
+
+.statement--gold {
+  background: linear-gradient(135deg, rgba(var(--color-gold-rgb), 0.06) 0%, var(--color-black) 50%, rgba(var(--color-gold-rgb), 0.04) 100%);
+}
+
+.statement__text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+.statement__word {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  line-height: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(var(--color-gold-rgb), 0.15) 0%,
+    rgba(var(--color-gold-rgb), 0.06) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  user-select: none;
+  transition: all 0.6s ease;
+}
+
+.statement__word:hover {
+  background: linear-gradient(
+    180deg,
+    var(--color-gold) 0%,
+    var(--color-gold-light) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.statement__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  opacity: 0.4;
+  flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .statement {
+    padding: 40px 0;
+  }
+
+  .statement__text {
+    gap: 16px;
+  }
+
+  .statement__dot {
+    width: 6px;
+    height: 6px;
+  }
+}
