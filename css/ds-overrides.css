@@ -1,0 +1,320 @@
+/* ===== Creative Giants Design System Overrides ===== */
+/* Applied LAST to override base styles with CG design tokens */
+
+/* ===== CG Design Tokens ===== */
+:root {
+  /* CG Backgrounds */
+  --cg-bg-warm: #fffef7;
+  --cg-bg-dark: #000;
+
+  /* CG Text */
+  --cg-text-primary: #000;
+  --cg-text-light: #fffef7;
+
+  /* CG Accent */
+  --cg-gold: #c9a84c;
+  --cg-yellow: #ffd001;
+
+  /* CG Neutrals */
+  --cg-neutral-100: #111;
+  --cg-neutral-200: #222;
+  --cg-neutral-400: #444;
+  --cg-neutral-600: #666;
+  --cg-neutral-aaa: #aaa;
+  --cg-neutral-ccc: #ccc;
+  --cg-neutral-eee: #eee;
+
+  /* CG Typography */
+  --cg-heading-weight: 400;
+  --cg-heading-tracking: -0.04em;
+  --cg-heading-leading: 1;
+  --cg-body-weight: 400;
+  --cg-body-tracking: 0;
+  --cg-body-leading: 1.4;
+
+  /* CG Motion */
+  --cg-ease: cubic-bezier(0.65, 0.01, 0.05, 0.99);
+  --cg-duration: 0.6s;
+  --cg-duration-slow: 1s;
+}
+
+/* ===== Typography Overrides ===== */
+.hero__title,
+.section-title,
+.about__heading,
+.gold-block__title,
+.cta-banner__title,
+.brands__title {
+  letter-spacing: var(--cg-heading-tracking);
+  line-height: var(--cg-heading-leading);
+  font-weight: var(--cg-heading-weight);
+}
+
+body {
+  line-height: var(--cg-body-leading);
+}
+
+/* ===== Lenis Smooth Scroll ===== */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* ===== Page Transition Columns ===== */
+.page-transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100000;
+  display: flex;
+  pointer-events: none;
+}
+
+.page-transition__col {
+  flex: 1;
+  background: var(--cg-bg-dark);
+  transform: scaleY(1);
+  transform-origin: top;
+}
+
+.page-transition__col:nth-child(1) { background: #000; }
+.page-transition__col:nth-child(2) { background: #111; }
+.page-transition__col:nth-child(3) { background: var(--cg-gold); }
+.page-transition__col:nth-child(4) { background: #111; }
+.page-transition__col:nth-child(5) { background: #000; }
+.page-transition__col:nth-child(6) { background: var(--cg-gold); }
+
+/* ===== Custom Cursor ===== */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  background: var(--cg-gold);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: width 0.3s var(--cg-ease), height 0.3s var(--cg-ease), opacity 0.3s;
+}
+
+.custom-cursor--active {
+  width: 60px;
+  height: 60px;
+  mix-blend-mode: normal;
+  background: rgba(201, 168, 76, 0.15);
+  border: 1px solid var(--cg-gold);
+}
+
+.custom-cursor__label {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--cg-gold);
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  transition: opacity 0.3s;
+}
+
+.custom-cursor__label--visible {
+  opacity: 1;
+}
+
+/* Hide custom cursor on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .custom-cursor,
+  .custom-cursor__label {
+    display: none !important;
+  }
+}
+
+/* ===== Eyebrow + Dot Pattern ===== */
+.eyebrow-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cg-gold);
+}
+
+.eyebrow-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--cg-gold);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Remove old section-number */
+.section-number {
+  display: none !important;
+}
+
+/* ===== Button Gold Fill Hover ===== */
+.hero__cta,
+.cta-banner__btn--primary,
+.register__submit,
+.vehicles__card-btn,
+.gold-block__item {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero__cta::before,
+.cta-banner__btn--primary::before,
+.register__submit::before,
+.vehicles__card-btn::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: var(--cg-yellow);
+  z-index: -1;
+  transition: height 0.4s var(--cg-ease);
+}
+
+.hero__cta:hover::before,
+.cta-banner__btn--primary:hover::before,
+.register__submit:hover::before,
+.vehicles__card-btn:hover::before {
+  height: 100%;
+}
+
+.hero__cta:hover,
+.cta-banner__btn--primary:hover,
+.register__submit:hover,
+.vehicles__card-btn:hover {
+  color: #000 !important;
+}
+
+/* ===== Theme Alternation ===== */
+.theme-light {
+  background-color: var(--cg-bg-warm) !important;
+  color: var(--cg-text-primary) !important;
+}
+
+.theme-dark {
+  background-color: var(--cg-bg-dark) !important;
+  color: var(--cg-text-light) !important;
+}
+
+/* ===== SplitType Line Reveal ===== */
+[data-line-reveal] .line {
+  overflow: hidden;
+  padding-bottom: 0.05em;
+}
+
+[data-line-reveal] .line > div,
+[data-line-reveal] .line > span {
+  transform: translateY(100%);
+}
+
+/* ===== Fade-up Reveal ===== */
+[data-fade] {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: none; /* GSAP handles it */
+}
+
+[data-fade].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Section Spacing Refinement ===== */
+.section-header {
+  margin-bottom: 60px;
+}
+
+/* ===== Vehicle Cards - Cursor Interaction ===== */
+.vehicles__card {
+  cursor: none;
+}
+
+/* ===== Warm White Body Background for Light Sections ===== */
+.section--light,
+.section--cream {
+  background-color: var(--cg-bg-warm) !important;
+}
+
+/* ===== Marquee CG Style ===== */
+.marquee {
+  border-top: 1px solid var(--cg-neutral-200);
+  border-bottom: 1px solid var(--cg-neutral-200);
+}
+
+/* ===== Gold Block CG Refinement ===== */
+.gold-block__item::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: var(--cg-yellow);
+  z-index: -1;
+  transition: height 0.4s var(--cg-ease);
+}
+
+.gold-block__item:hover::before {
+  height: 100%;
+}
+
+.gold-block__item:hover {
+  color: #000 !important;
+}
+
+.gold-block__item:hover .gold-block__item-name,
+.gold-block__item:hover .gold-block__item-desc {
+  color: #000 !important;
+}
+
+/* ===== Hero Parallax Container ===== */
+.hero__car-showcase {
+  will-change: transform;
+}
+
+/* ===== Scroll Indicator CG Style ===== */
+.hero__scroll-indicator {
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 500;
+}
