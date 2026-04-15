@@ -1,122 +1,126 @@
-/* ===== Features / Diferenciais Section ===== */
+/* ===== Features - Layout Assimétrico com Números Gigantes ===== */
 .features {
   padding: 100px 0;
-  background: var(--color-dark);
   position: relative;
-}
-
-.features .container {
-  position: relative;
-  z-index: 1;
-}
-
-.features__grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-}
-
-.features__card {
-  position: relative;
-  padding: 40px 28px 36px;
-  background: #fff;
-  border-radius: 20px;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  transition: var(--transition-slow);
   overflow: hidden;
-  text-align: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
 }
 
-/* Gradient border effect on hover */
-.features__card::before {
+.features__header {
+  margin-bottom: 60px;
+}
+
+.features__main-title {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 400;
+  color: var(--color-dark-text);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+/* Linhas horizontais com número + texto */
+.features__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.features__row {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 40px;
+  align-items: start;
+  padding: 40px 0;
+  position: relative;
+  cursor: default;
+  transition: all 0.5s var(--ease-out-expo);
+}
+
+.features__row:hover {
+  padding-left: 20px;
+}
+
+.features__line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.features__line::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
   bottom: 0;
-  border-radius: 20px;
-  padding: 1px;
-  background: linear-gradient(160deg, rgba(var(--color-gold-rgb), 0) 0%, rgba(var(--color-gold-rgb), 0) 100%);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  transition: background 0.6s ease;
-  pointer-events: none;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-gold);
+  transition: width 0.8s var(--ease-out-expo);
 }
 
-.features__card:hover::before {
-  background: linear-gradient(160deg, rgba(var(--color-gold-rgb), 0.4) 0%, rgba(var(--color-sapphire-rgb), 0.2) 100%);
+.features__row:hover .features__line::after {
+  width: 100%;
 }
 
-.features__card:hover {
-  transform: translateY(-8px);
-  box-shadow:
-    0 20px 60px rgba(0, 0, 0, 0.08),
-    0 0 40px rgba(var(--color-gold-rgb), 0.06);
+.features__num {
+  font-family: var(--font-heading);
+  font-size: 4rem;
+  color: var(--color-gold);
+  line-height: 1;
+  letter-spacing: 2px;
+  opacity: 0.3;
+  transition: opacity 0.5s ease;
 }
 
-.features__icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 68px;
-  height: 68px;
-  border-radius: 18px;
-  background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-dark) 100%);
-  border: none;
-  color: #fff;
-  margin-bottom: 24px;
-  transition: var(--transition);
-  position: relative;
-  z-index: 1;
-  box-shadow: 0 6px 20px rgba(var(--color-gold-rgb), 0.25);
+.features__row:hover .features__num {
+  opacity: 1;
 }
 
-.features__card:hover .features__icon {
-  transform: scale(1.08);
-  box-shadow: 0 8px 30px rgba(var(--color-gold-rgb), 0.35);
+.features__info {
+  padding-top: 8px;
 }
 
 .features__title {
   font-family: var(--font-heading);
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   font-weight: 400;
   color: var(--color-dark-text);
-  margin-bottom: 14px;
-  position: relative;
-  z-index: 1;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   text-transform: uppercase;
+  margin-bottom: 8px;
+  transition: color 0.5s ease;
+}
+
+.features__row:hover .features__title {
+  color: var(--color-gold-dark);
 }
 
 .features__text {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   color: var(--color-dark-gray-text);
   line-height: 1.7;
-  position: relative;
-  z-index: 1;
+  max-width: 500px;
 }
 
 /* Responsive */
-@media (max-width: 1024px) {
-  .features__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .features {
     padding: 70px 0;
   }
 
-  .features__grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
+  .features__row {
+    grid-template-columns: 60px 1fr;
+    gap: 20px;
+    padding: 30px 0;
   }
 
-  .features__card {
-    padding: 30px 24px;
+  .features__num {
+    font-size: 2.5rem;
+  }
+
+  .features__title {
+    font-size: 1.2rem;
   }
 }
