@@ -11,7 +11,23 @@ interface BrandVehicle {
   image: string;
 }
 
-// Vehicle database - same data as the carousel cards
+// Brand ambience: each brand has its own color atmosphere
+interface BrandTheme {
+  glow: string;       // radial glow color
+  accent: string;     // accent for borders/details
+  accentRgb: string;  // rgb values
+  bg: string;         // subtle background tint
+}
+
+const brandThemes: Record<string, BrandTheme> = {
+  'Mercedes-Benz': { glow: '#c0c0c0', accent: '#e0e0e0', accentRgb: '192,192,192', bg: 'rgba(192,192,192,0.03)' },
+  'BMW':           { glow: '#1c69d4', accent: '#4a9af5', accentRgb: '74,154,245', bg: 'rgba(28,105,212,0.03)' },
+  'Porsche':       { glow: '#c9a84c', accent: '#e8d48b', accentRgb: '201,168,76', bg: 'rgba(201,168,76,0.03)' },
+  'Audi':          { glow: '#ff0000', accent: '#ff4444', accentRgb: '255,68,68', bg: 'rgba(255,0,0,0.02)' },
+  'CAOA Chery':    { glow: '#8b0000', accent: '#cc3333', accentRgb: '204,51,51', bg: 'rgba(139,0,0,0.03)' },
+  'Ferrari':       { glow: '#ff2800', accent: '#ff5533', accentRgb: '255,40,0', bg: 'rgba(255,40,0,0.03)' },
+};
+
 const brandImages: Record<string, string> = {
   'Mercedes-Benz': 'assets/images/mercedes-sclass.png',
   'BMW': 'assets/images/bmw-serie7.png',
@@ -38,7 +54,6 @@ const vehicles: BrandVehicle[] = [
   { brand: 'CAOA Chery', model: 'Tiggo 7 Pro', year: '2024', price: 185000, km: '0', fuel: 'Gasolina', transmission: 'CVT', power: '150 cv', color: 'Branco Perolizado', image: 'assets/images/caoa-tiggo8.webp' },
 ];
 
-// Brand logos: image path or SVG fallback
 const brandLogos: Record<string, { type: 'img' | 'svg'; src: string }> = {
   'Mercedes-Benz': { type: 'img', src: 'assets/images/mercedes-logo.png' },
   'BMW': { type: 'img', src: 'assets/images/bmw-logo.png' },
@@ -53,21 +68,34 @@ export function initBrand(): void {
   const brandName = document.getElementById('brandName') as HTMLElement;
   const brandLogoText = document.getElementById('brandLogoText') as HTMLElement;
   const brandSvgContainer = document.getElementById('brandLogo') as HTMLElement;
+  const brandsSection = document.querySelector('.brands') as HTMLElement;
   const buttons = document.querySelectorAll<HTMLButtonElement>('.brands__brand-btn');
 
-  if (!grid || !brandName) return;
+  if (!grid || !brandName || !brandsSection) return;
 
   let currentBrand = 'Mercedes-Benz';
 
+  function applyTheme(brand: string): void {
+    const theme = brandThemes[brand];
+    if (!theme || !brandsSection) return;
+
+    brandsSection.style.setProperty('--brand-glow', theme.glow);
+    brandsSection.style.setProperty('--brand-accent', theme.accent);
+    brandsSection.style.setProperty('--brand-accent-rgb', theme.accentRgb);
+    brandsSection.style.setProperty('--brand-bg', theme.bg);
+  }
+
   function renderCards(brand: string): void {
     const filtered = vehicles.filter(v => v.brand === brand);
+    const theme = brandThemes[brand];
 
-    grid.innerHTML = filtered.map(v => {
+    grid.innerHTML = filtered.map((v, i) => {
       const kmDisplay = v.km === '0' ? '0 km' : `${parseInt(v.km).toLocaleString('pt-BR')} km`;
       const priceDisplay = 'R$ ' + v.price.toLocaleString('pt-BR');
+      const delay = i * 0.1;
 
       return `
-        <div class="brands__card">
+        <div class="brands__card" style="animation-delay: ${delay}s">
           <div class="brands__card-image">
             <img src="${v.image}" alt="${v.brand} ${v.model}">
           </div>
@@ -78,16 +106,18 @@ export function initBrand(): void {
               <span>${v.fuel}</span>
               <span>${v.transmission}</span>
             </div>
-            <div class="brands__card-price-box">
-              <p class="brands__card-price-label">Preço sugerido</p>
+            <div class="brands__card-price-row">
               <p class="brands__card-price">${priceDisplay}</p>
+              <span class="brands__card-badge">${v.year}</span>
             </div>
-            <div class="brands__card-features">
-              <span class="brands__card-feature">${v.year}</span>
-              <span class="brands__card-feature">${kmDisplay}</span>
-              <span class="brands__card-feature">${v.color}</span>
+            <div class="brands__card-meta">
+              <span>${kmDisplay}</span>
+              <span>${v.color}</span>
             </div>
-            <a href="#cadastro" class="brands__card-link">Ir para o Showroom</a>
+            <a href="#cadastro" class="brands__card-cta">
+              <span>Ver detalhes</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
           </div>
         </div>
       `;
@@ -101,14 +131,17 @@ export function initBrand(): void {
   function switchBrand(brand: string): void {
     currentBrand = brand;
     brandName.textContent = brand;
-    brandLogoText.textContent = brand;
+    if (brandLogoText) brandLogoText.textContent = brand;
+
+    // Apply brand theme (ambience)
+    applyTheme(brand);
 
     // Update large logo
-    const oldLogo = brandSvgContainer.querySelector('.brands__active-img, .brands__active-svg');
+    const oldLogo = brandSvgContainer?.querySelector('.brands__active-img, .brands__active-svg');
     if (oldLogo) oldLogo.remove();
 
     const logo = brandLogos[brand];
-    if (logo) {
+    if (logo && brandSvgContainer) {
       if (logo.type === 'img') {
         const img = document.createElement('img');
         img.className = 'brands__active-img';
@@ -142,5 +175,6 @@ export function initBrand(): void {
   });
 
   // Init
+  applyTheme(currentBrand);
   renderCards(currentBrand);
 }
