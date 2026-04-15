@@ -260,19 +260,17 @@
       });
     });
 
-    // Testimonial cards stagger on scroll
+    // Testimonial cards - parallax only (no opacity change)
     var testimonialCards = document.querySelectorAll('.testimonials__card');
     testimonialCards.forEach(function(card, i) {
-      gsap.from(card, {
-        y: 80,
-        opacity: 0,
-        duration: 0.8,
-        delay: i * 0.15,
-        ease: 'main',
+      gsap.to(card, {
+        y: -20 - (i * 10),
+        ease: 'none',
         scrollTrigger: {
           trigger: card,
-          start: 'top 90%',
-          once: true
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: 1.5
         }
       });
     });
