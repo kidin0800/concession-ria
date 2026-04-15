@@ -71,7 +71,7 @@
   justify-content: center;
   width: 40px;
   height: 40px;
-  border: 1px solid rgba(201, 168, 76, 0.3);
+  border: 1px solid rgba(var(--color-gold-rgb), 0.3);
   border-radius: 50%;
   font-size: 0.85rem;
   font-weight: 600;
@@ -87,7 +87,7 @@
 
 /* Bottom Bar */
 .footer__bottom {
-  border-top: 1px solid rgba(201, 168, 76, 0.15);
+  border-top: 1px solid rgba(var(--color-gold-rgb), 0.15);
   padding: 20px 0;
   text-align: center;
 }

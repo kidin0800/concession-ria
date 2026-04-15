@@ -8,7 +8,7 @@
   max-width: 550px;
   margin: 0 auto;
   background: rgba(45, 45, 45, 0.5);
-  border: 1px solid rgba(201, 168, 76, 0.15);
+  border: 1px solid rgba(var(--color-gold-rgb), 0.15);
   border-radius: 16px;
   padding: 30px 30px;
   backdrop-filter: blur(10px);
@@ -92,7 +92,7 @@
 
 .register__submit:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(201, 168, 76, 0.3);
+  box-shadow: 0 10px 30px rgba(var(--color-gold-rgb), 0.3);
 }
 
 .register__submit:active {
@@ -104,7 +104,7 @@
   text-align: center;
   padding: 20px;
   margin-top: 20px;
-  background: rgba(201, 168, 76, 0.1);
+  background: rgba(var(--color-gold-rgb), 0.1);
   border: 1px solid var(--color-gold);
   border-radius: 8px;
   animation: fadeInUp 0.5s ease;

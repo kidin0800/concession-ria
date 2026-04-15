@@ -2,8 +2,8 @@
 .marquee {
   padding: 28px 0;
   background: var(--color-dark);
-  border-top: 1px solid rgba(var(--color-accent-rgb), 0.1);
-  border-bottom: 1px solid rgba(var(--color-accent-rgb), 0.1);
+  border-top: 1px solid rgba(var(--color-gold-rgb), 0.1);
+  border-bottom: 1px solid rgba(var(--color-gold-rgb), 0.1);
   overflow: hidden;
   position: relative;
 }
@@ -78,7 +78,7 @@
 }
 
 .marquee__separator {
-  color: rgba(var(--color-accent-rgb), 0.3);
+  color: rgba(var(--color-gold-rgb), 0.3);
   font-size: 1.2rem;
   padding: 0 10px;
   user-select: none;

@@ -15,9 +15,9 @@
   width: 100%;
   height: 100%;
   background:
-    radial-gradient(ellipse at 20% 50%, rgba(var(--color-accent-rgb), 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 30%, rgba(var(--color-accent-rgb), 0.06) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 90%, rgba(var(--color-accent-rgb), 0.04) 0%, transparent 40%);
+    radial-gradient(ellipse at 20% 50%, rgba(var(--color-sapphire-rgb), 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 30%, rgba(var(--color-sapphire-rgb), 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 90%, rgba(var(--color-sapphire-rgb), 0.04) 0%, transparent 40%);
   z-index: 1;
 }
 
@@ -45,7 +45,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 4px;
-  color: var(--color-gold-light);
+  color: var(--color-gold);
   margin-bottom: 24px;
   position: relative;
   padding-left: 50px;
@@ -58,7 +58,7 @@
   top: 50%;
   width: 36px;
   height: 1px;
-  background: var(--color-gold-light);
+  background: var(--color-gold);
 }
 
 .hero__title {
@@ -96,7 +96,7 @@
   padding: 18px 36px;
   background: transparent;
   color: var(--color-white);
-  border: 1px solid rgba(var(--color-accent-rgb), 0.4);
+  border: 1px solid rgba(var(--color-gold-rgb), 0.35);
   border-radius: 60px;
   font-family: var(--font-body);
   font-size: 0.9rem;
@@ -139,7 +139,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: rgba(var(--color-accent-rgb), 0.2);
+  background: rgba(var(--color-gold-rgb), 0.2);
   transition: all 0.4s ease;
 }
 
@@ -190,8 +190,8 @@
   align-items: center;
   gap: 30px;
   padding: 24px 40px;
-  background: rgba(var(--color-accent-rgb), 0.06);
-  border: 1px solid rgba(var(--color-accent-rgb), 0.15);
+  background: rgba(var(--color-sapphire-rgb), 0.06);
+  border: 1px solid rgba(var(--color-gold-rgb), 0.12);
   border-radius: 16px;
   backdrop-filter: blur(10px);
 }
@@ -211,7 +211,7 @@
 
 .hero__stat-unit {
   font-size: 1rem;
-  color: var(--color-gold-light);
+  color: var(--color-gold);
   font-weight: 600;
   margin-left: 2px;
 }
@@ -228,7 +228,7 @@
 .hero__stat-divider {
   width: 1px;
   height: 40px;
-  background: rgba(var(--color-accent-rgb), 0.3);
+  background: rgba(var(--color-gold-rgb), 0.2);
 }
 
 /* ===== Scroll Indicator ===== */
