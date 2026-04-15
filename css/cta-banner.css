@@ -13,7 +13,7 @@
   height: 100%;
   background:
     radial-gradient(ellipse at 30% 50%, rgba(var(--color-gold-rgb), 0.1) 0%, transparent 50%),
-    radial-gradient(ellipse at 70% 50%, rgba(var(--color-sapphire-rgb), 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 50%, rgba(var(--color-gold-rgb), 0.08) 0%, transparent 50%),
     linear-gradient(135deg, var(--color-dark) 0%, var(--color-black) 50%, var(--color-dark) 100%);
   z-index: 0;
 }

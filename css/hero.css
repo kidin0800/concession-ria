@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: linear-gradient(135deg, #060816 0%, #0e1230 30%, #060816 60%, #0e1230 100%);
+  background: linear-gradient(135deg, #080808 0%, #111 30%, #080808 60%, #0d0d0d 100%);
 }
 
 .hero__overlay {
@@ -15,9 +15,9 @@
   width: 100%;
   height: 100%;
   background:
-    radial-gradient(ellipse at 20% 50%, rgba(var(--color-sapphire-rgb), 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 30%, rgba(var(--color-sapphire-rgb), 0.06) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 90%, rgba(var(--color-sapphire-rgb), 0.04) 0%, transparent 40%);
+    radial-gradient(ellipse at 20% 50%, rgba(var(--color-gold-rgb), 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 30%, rgba(var(--color-gold-rgb), 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 90%, rgba(var(--color-gold-rgb), 0.04) 0%, transparent 40%);
   z-index: 1;
 }
 
@@ -191,7 +191,7 @@
   align-items: center;
   gap: 30px;
   padding: 24px 40px;
-  background: rgba(var(--color-sapphire-rgb), 0.06);
+  background: rgba(var(--color-gold-rgb), 0.06);
   border: 1px solid rgba(var(--color-gold-rgb), 0.12);
   border-radius: 16px;
   backdrop-filter: blur(10px);

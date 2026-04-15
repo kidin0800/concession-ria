@@ -7,37 +7,38 @@
   box-sizing: border-box;
 }
 
-/* ===== CSS Variables - Sapphire & Gold Dual Tone ===== */
+/* ===== CSS Variables - Dark Luxury ===== */
 :root {
-  /* Primary - Sapphire */
-  --color-black: #050510;
-  --color-dark: #0a0e24;
-  --color-dark-medium: #111638;
-  --color-sapphire: #1e3a8a;
-  --color-sapphire-light: #3b82f6;
-  --color-sapphire-rgb: 30, 58, 138;
+  /* Primary - Deep Black (SEM AZUL) */
+  --color-black: #080808;
+  --color-dark: #111111;
+  --color-dark-medium: #1a1a1a;
+  --color-dark-light: #252525;
 
-  /* Secondary - Gold */
+  /* Accent - Gold */
   --color-gold: #c9a84c;
   --color-gold-light: #e8d48b;
   --color-gold-dark: #a8893a;
   --color-gold-rgb: 201, 168, 76;
 
   /* Neutrals */
-  --color-white: #f0f2ff;
-  --color-gray: #7a7f99;
-  --color-light-gray: #b0b5cc;
+  --color-white: #f5f5f0;
+  --color-gray: #888;
+  --color-light-gray: #aaa;
 
   /* Light sections */
   --color-cream: #f0ece4;
   --color-cream-dark: #e4dfd6;
-  --color-dark-text: #0a0e24;
-  --color-dark-gray-text: #3a3d4a;
+  --color-dark-text: #111;
+  --color-dark-gray-text: #555;
 
-  /* Accent alias */
-  --color-accent: var(--color-sapphire);
-  --color-accent-light: var(--color-sapphire-light);
-  --color-accent-rgb: var(--color-sapphire-rgb);
+  /* Compat aliases (para CSS que ainda usa sapphire) */
+  --color-sapphire: var(--color-gold-dark);
+  --color-sapphire-light: var(--color-gold);
+  --color-sapphire-rgb: var(--color-gold-rgb);
+  --color-accent: var(--color-gold);
+  --color-accent-light: var(--color-gold-light);
+  --color-accent-rgb: var(--color-gold-rgb);
 
   /* Typography */
   --font-display: 'Playfair Display', Georgia, serif;
@@ -47,12 +48,12 @@
   /* Transitions */
   --transition: all 0.3s ease;
   --transition-slow: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
 
   /* Shadows */
-  --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.4);
-  --shadow-hover: 0 20px 60px rgba(var(--color-sapphire-rgb), 0.15);
+  --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.5);
+  --shadow-hover: 0 20px 60px rgba(var(--color-gold-rgb), 0.12);
   --shadow-gold: 0 10px 40px rgba(var(--color-gold-rgb), 0.15);
-  --glow-sapphire: 0 0 60px rgba(var(--color-sapphire-rgb), 0.15);
   --glow-gold: 0 0 60px rgba(var(--color-gold-rgb), 0.1);
 }
 
@@ -324,6 +325,31 @@ img {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Cream alias */
+.section--cream {
+  background: var(--color-cream) !important;
+  color: var(--color-dark-text);
+}
+.section--cream .section-title { color: var(--color-dark-text); }
+.section--cream .section-subtitle { color: var(--color-dark-gray-text); }
+.section--cream .section-number {
+  color: var(--color-gold-dark);
+  border-color: rgba(var(--color-gold-rgb), 0.4);
+  background: rgba(var(--color-gold-rgb), 0.1);
+}
+.section--cream .section-divider { background: var(--color-gold-dark); }
+.section--cream .gradient-text {
+  background: linear-gradient(135deg, var(--color-gold-dark) 0%, var(--color-gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Dark section */
+.section--dark {
+  background: var(--color-dark) !important;
 }
 
 /* ===== Professional Animation System (Champions4Good style) ===== */

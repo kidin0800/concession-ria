@@ -45,7 +45,7 @@
 }
 
 .testimonials__card:hover::before {
-  background: linear-gradient(160deg, rgba(var(--color-gold-rgb), 0.4) 0%, rgba(var(--color-sapphire-rgb), 0.2) 100%);
+  background: linear-gradient(160deg, rgba(var(--color-gold-rgb), 0.4) 0%, rgba(var(--color-gold-rgb), 0.2) 100%);
 }
 
 .testimonials__card:hover {

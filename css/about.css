@@ -38,8 +38,13 @@
   line-height: 1.8;
 }
 
-.section--light .about__paragraph {
+.section--light .about__paragraph,
+.section--cream .about__paragraph {
   color: var(--color-dark-gray-text);
+}
+
+.section--cream .about__heading {
+  color: var(--color-gold-dark);
 }
 
 .about__image-placeholder {
