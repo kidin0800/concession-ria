@@ -1,9 +1,8 @@
 /* ===== Marquee de Marcas ===== */
 .marquee {
   padding: 28px 0;
-  background: var(--color-dark);
-  border-top: 1px solid rgba(var(--color-gold-rgb), 0.1);
-  border-bottom: 1px solid rgba(var(--color-gold-rgb), 0.1);
+  background: var(--color-gold-dark);
+  border: none;
   overflow: hidden;
   position: relative;
 }
@@ -21,12 +20,12 @@
 
 .marquee::before {
   left: 0;
-  background: linear-gradient(to right, var(--color-dark), transparent);
+  background: linear-gradient(to right, var(--color-gold-dark), transparent);
 }
 
 .marquee::after {
   right: 0;
-  background: linear-gradient(to left, var(--color-dark), transparent);
+  background: linear-gradient(to left, var(--color-gold-dark), transparent);
 }
 
 .marquee__track {
@@ -50,19 +49,19 @@
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  font-family: var(--font-body);
-  font-size: 1rem;
-  font-weight: 500;
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 3px;
-  color: var(--color-light-gray);
+  letter-spacing: 4px;
+  color: rgba(0, 0, 0, 0.6);
   white-space: nowrap;
   padding: 0 20px;
   transition: color 0.3s ease;
 }
 
 .marquee__item:hover {
-  color: var(--color-gold-light);
+  color: var(--color-black);
 }
 
 .marquee__logo {
@@ -78,7 +77,7 @@
 }
 
 .marquee__separator {
-  color: rgba(var(--color-gold-rgb), 0.3);
+  color: rgba(0, 0, 0, 0.25);
   font-size: 1.2rem;
   padding: 0 10px;
   user-select: none;

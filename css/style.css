@@ -28,6 +28,12 @@
   --color-gray: #7a7f99;
   --color-light-gray: #b0b5cc;
 
+  /* Light sections */
+  --color-cream: #f0ece4;
+  --color-cream-dark: #e4dfd6;
+  --color-dark-text: #0a0e24;
+  --color-dark-gray-text: #3a3d4a;
+
   /* Accent alias */
   --color-accent: var(--color-sapphire);
   --color-accent-light: var(--color-sapphire-light);
@@ -282,6 +288,42 @@ img {
   width: 600px;
   height: 300px;
   opacity: 0.04;
+}
+
+/* ===== Light Section Theme ===== */
+.section--light {
+  background: var(--color-cream) !important;
+  color: var(--color-dark-text);
+}
+
+.section--light .section-title {
+  color: var(--color-dark-text);
+}
+
+.section--light .section-subtitle {
+  color: var(--color-dark-gray-text);
+}
+
+.section--light .section-number {
+  color: var(--color-gold-dark);
+  border-color: rgba(var(--color-gold-rgb), 0.3);
+  background: rgba(var(--color-gold-rgb), 0.08);
+}
+
+.section--light .section-divider {
+  background: linear-gradient(90deg, transparent, var(--color-gold-dark), transparent);
+}
+
+.section--light .section-divider::after {
+  background: var(--color-gold-dark);
+  box-shadow: 0 0 10px rgba(var(--color-gold-rgb), 0.3);
+}
+
+.section--light .gradient-text {
+  background: linear-gradient(135deg, var(--color-gold-dark) 0%, var(--color-gold) 50%, var(--color-gold-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* ===== Professional Animation System (Champions4Good style) ===== */
